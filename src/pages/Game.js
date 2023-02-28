@@ -10,6 +10,10 @@ const Game = () => {
   const [gameCheck, setGameCheck] = useState("");
   //   bien mettre ("") pour éviter undefined à chargement page
   const [isLoading, setIsLoading] = useState();
+  //state platforms
+  const [platforms, setPlatforms] = useState([]);
+  //state publisher
+  const [publisher, setPublisher] = useState([]);
 
   //   recupération de l'id?
   const { id } = useParams();
@@ -22,6 +26,10 @@ const Game = () => {
         );
         setGameCheck(response.data);
         console.log(response.data, "reponse data game");
+        setPublisher(response.data.publishers);
+        console.log(response.data.publishers, "reponse data publishers");
+        setPlatforms(response.data.platforms);
+        console.log(response.data.platforms, "reponse data platforms");
         setIsLoading(false);
       } catch (error) {
         console.log(error.message);
@@ -54,11 +62,36 @@ const Game = () => {
                 </button>
               </div>
               <div className="plateformBlock">
-                <div>
-                  <p>Plateforms</p>
+                <div className="columnOne">
+                  <div>
+                    <h1 className="greyText">Plateforms</h1>
+                    {/* création d'un nouveau state pour boucler sur le résultat d'un tableau */}
+                    {platforms.map((elem, index) => {
+                      return (
+                        <div className="platformResult" key={index}>
+                          <p>{elem.platform.name}</p>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <div>
+                    <h1 className="greyText">Released date</h1>
+                    <p>{gameCheck.released}</p>
+                  </div>
+                  <div>
+                    <h1 className="greyText">Publisher</h1>
+                    {publisher.map((elem, index) => {
+                      return (
+                        <div className="platformResult" key={index}>
+                          <p>{elem.name}</p>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
+
                 <div>
-                  <p>Genre</p>
+                  <p className="greyText">Genre</p>
                   {/* <p>{gameCheck.genres}</p> */}
                 </div>
               </div>
