@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import GameCard from "../components/GameCard";
 
@@ -33,9 +34,7 @@ const Homepage = () => {
   return (
     <div className="Home">
       {isLoading ? (
-        <div>
-          <p>En cours de chargement...</p>
-        </div>
+        <div></div>
       ) : (
         <div>
           {/* searchbar: filtre par nom -----------------------------------------------------------*/}
@@ -51,10 +50,15 @@ const Homepage = () => {
               onChange={(event) => setSearch(event.target.value)}
             />
           </section>
+          <div className="homeh1">
+            <h1>Most Relevance Games</h1>
+          </div>
 
           {/* reponse serveur: games du moment -----------------------------------------------------------*/}
           <section>
-            <GameCard games={games} />
+            <Link to={"/game"}>
+              <GameCard games={games} />
+            </Link>
           </section>
         </div>
       )}
