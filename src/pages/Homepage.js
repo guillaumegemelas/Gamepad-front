@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import GameCard from "../components/GameCard";
 
 import logo from "../img/logo.jpg";
 
@@ -30,7 +31,7 @@ const Homepage = () => {
 
   // j'ai bien une réponse du serveur avec tous les jeux
   return (
-    <div>
+    <div className="Home">
       {isLoading ? (
         <div>
           <p>En cours de chargement...</p>
@@ -52,19 +53,9 @@ const Homepage = () => {
           </section>
 
           {/* reponse serveur: games du moment -----------------------------------------------------------*/}
-          {games.results.map((elem, index) => {
-            return (
-              <div key={index}>
-                <h1>{elem.name}</h1>
-                <h1>{elem.rating}</h1>
-                <img
-                  style={{ width: 100, height: 100 }}
-                  src={elem.background_image}
-                  alt=""
-                />
-              </div>
-            );
-          })}
+          <section>
+            <GameCard games={games} />
+          </section>
         </div>
       )}
     </div>
