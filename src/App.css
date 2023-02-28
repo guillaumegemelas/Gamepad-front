@@ -109,6 +109,12 @@
   /* il faudrait ajouter de l'opacité derrière le texte en blanc */
 }
 
+/* GamePage--------------------------------------------- */
+
+.gamePage {
+  margin-top: 80px;
+}
+
 /* Footer--------------------------------------------- */
 .footer {
   display: flex;

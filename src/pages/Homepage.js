@@ -34,7 +34,9 @@ const Homepage = () => {
   return (
     <div className="Home">
       {isLoading ? (
-        <div></div>
+        <div>
+          <p>En cours de chargement...</p>
+        </div>
       ) : (
         <div>
           {/* searchbar: filtre par nom -----------------------------------------------------------*/}
