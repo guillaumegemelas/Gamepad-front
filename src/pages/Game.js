@@ -42,7 +42,9 @@ const Game = () => {
   return (
     <div className="gamePage">
       {isLoading ? (
-        <h1>you are on the game page</h1>
+        <div className="isLoading">
+          <h1>En cours de chargement</h1>
+        </div>
       ) : (
         <div className="gameResult">
           <h1>{gameCheck.name}</h1>

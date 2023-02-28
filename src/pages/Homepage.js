@@ -34,8 +34,8 @@ const Homepage = () => {
   return (
     <div className="Home">
       {isLoading ? (
-        <div>
-          <p>En cours de chargement...</p>
+        <div className="isLoading">
+          <h1>En cours de chargement</h1>
         </div>
       ) : (
         <div>
