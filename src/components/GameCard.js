@@ -1,4 +1,5 @@
 // import { MdChevronLeft, MdChevronRight } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const GameCard = ({ games }) => {
   //     const slideLeft = () => {
@@ -15,21 +16,29 @@ const GameCard = ({ games }) => {
     <div className="gamesResult">
       {games.results.map((elem, index) => {
         return (
-          <div className="gameCard" key={index}>
-            {/* <p>{elem.id}</p> */}
-            {/* <h1>{elem.rating}</h1> */}
+          <section key={index}>
             <div>
-              {/* <MdChevronLeft onClick={slideLeft} size={30} /> */}
-              <div id="slider" className="carousel">
-                <img src={elem.background_image} alt="picture1" />
-                <img src={elem.short_screenshots[1].image} alt="" />
-                <img src={elem.short_screenshots[2].image} alt="" />
-              </div>
-              {/* <MdChevronRight onClick={slideRight} size={30} /> */}
-            </div>
+              <Link className="gameCard" to={`/game/${elem.id}`}>
+                <div>
+                  {/* <MdChevronLeft onClick={slideLeft} size={30} /> */}
+                  <div id="slider" className="carousel">
+                    <img src={elem.background_image} alt="picture1" />
 
-            <h1>{elem.name}</h1>
-          </div>
+                    {/* {!elem.short_screenshots[1].image ? (
+                  <img src={elem.background_image} alt="picture1" />
+                ) : (
+                  <img src={elem.short_screenshots[1].image} alt="" />
+                )} */}
+
+                    {/* <img src={elem.short_screenshots[2].image} alt="" /> */}
+                  </div>
+                  {/* <MdChevronRight onClick={slideRight} size={30} /> */}
+                </div>
+
+                <h1>{elem.name}</h1>
+              </Link>
+            </div>
+          </section>
         );
       })}
     </div>

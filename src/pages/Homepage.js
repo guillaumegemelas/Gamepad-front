@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import GameCard from "../components/GameCard";
 
@@ -51,6 +51,7 @@ const Homepage = () => {
               placeholder="Search for a game..."
               onChange={(event) => setSearch(event.target.value)}
             />
+            <p>Search: {games.count} games</p>
           </section>
           <div className="homeh1">
             <h1>Most Relevance Games</h1>
@@ -58,9 +59,7 @@ const Homepage = () => {
 
           {/* reponse serveur: games du moment -----------------------------------------------------------*/}
           <section>
-            <Link to={"/game"}>
-              <GameCard games={games} />
-            </Link>
+            <GameCard games={games} />
           </section>
         </div>
       )}
