@@ -18,6 +18,12 @@ const Game = () => {
   const [genre, setGenre] = useState([]);
   //state developer
   const [developer, setDeveloper] = useState([]);
+  //state pour seconde requete
+  const [gameSameType, setGameSameType] = useState("");
+  const [gameSameType2, setGameSameType2] = useState([]);
+
+  // const randomNumber = Math.floor(Math.random() * (20000 - 1)) + 1;
+  // console.log(randomNumber);
 
   //   recupération de l'id?
   const { id } = useParams();
@@ -29,13 +35,19 @@ const Game = () => {
           `https://api.rawg.io/api/games/${id}?key=b144d325b8cd4cee8a7ad6c204cab7d2`
         );
         setGameCheck(response.data);
-        console.log(response.data, "reponse data game");
+        // console.log(response.data, "reponse data game");
         setPublisher(response.data.publishers);
         // console.log(response.data.publishers, "reponse data publishers");
         setPlatforms(response.data.platforms);
         // console.log(response.data.platforms, "reponse data platforms");
         setGenre(response.data.genres);
-        // console.log(response.data.genres);
+        console.log(response.data.genres);
+        //a mettre en lowercase pour la requete sinon ne passe pas
+        setGameSameType(response.data.name.toLowerCase());
+        console.log(
+          response.data.genres[0].name,
+          "first requete------------------"
+        );
         setDeveloper(response.data.developers);
         // console.log(response.data.developers);
         setIsLoading(false);
@@ -46,6 +58,32 @@ const Game = () => {
     };
     fetchData();
   }, [id]);
+
+  //test seconde requete pour ajouter 5 jeux du même genre----------------------------
+
+  useEffect(() => {
+    const fetchGame = async () => {
+      try {
+        const response = await axios.get(
+          `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&search=${gameSameType}`
+          //requete par genre de jeu (ex: action)
+          // `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&genres=${gameSameType}`
+        );
+        setGameSameType2(response.data.results);
+        console.log(response.data.results, "************data.results******");
+        // console.log(gameSameType, "second requete------+ + + + +----");
+        // console.log(response.data, "reponse data game Type");
+
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error.message);
+        console.log(error.response);
+      }
+    };
+    fetchGame();
+  }, [gameSameType]);
+
+  //test seconde requete pour ajouter 5 jeux du même genre----------------------------
 
   return (
     <div className="gamePage">
@@ -145,7 +183,26 @@ const Game = () => {
 
             <div>
               {/* il trouver 5 jeux similaires au jeu en question
-                map sur response.data? */}
+                map sur response.data?-------------------------------------*/}
+              {gameSameType2.length !== 0 && (
+                <div className="gamesPickUp">
+                  {/* OK mais renvoie tjs l'index de 1 à 5 au lieu d'un pick aléatoire */}
+                  {gameSameType2.map((elem, index) => {
+                    return (
+                      index < 5 && (
+                        <div key={elem.id} className="gameCard1">
+                          <img src={elem.background_image} alt="picture2" />
+
+                          <div>
+                            <h1>{elem.name}</h1>
+                          </div>
+                        </div>
+                      )
+                    );
+                  })}
+                </div>
+                // fin response.data?-------------------------------------*/}
+              )}
             </div>
           </section>
         </div>
