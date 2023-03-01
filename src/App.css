@@ -7,6 +7,7 @@
 .header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 80px;
   background-color: #1f2024;
   border-bottom: 2px solid #21a1b3;
@@ -15,6 +16,11 @@
   width: 100%;
   z-index: 999;
 }
+.powered {
+  color: rgb(184, 180, 180);
+  padding-right: 50px;
+}
+
 .logo img {
   width: 190px;
   height: 80px;
