@@ -28,6 +28,9 @@ const Homepage = () => {
           // requete sans platform
           `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&search=${search}&page=${page}`
 
+          // requete vers le back fonctionne!!!! plus besoin de clé Api et requete vers serveur local et plus tard northflank:
+          // `http://localhost:3000/games?&search=${search}&page=${page}`
+
           // `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&search=${search}&page=${page}&platforms=${platforms}`
         );
         setGames(response.data);

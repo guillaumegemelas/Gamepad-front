@@ -9,7 +9,7 @@ const Header = () => {
       <div className="powered">
         <p>
           Powered by{" "}
-          <span style={{ textDecoration: "underline" }}>Rawg API</span>{" "}
+          <span style={{ textDecoration: "underline" }}>Rawg API</span>
         </p>
       </div>
     </div>

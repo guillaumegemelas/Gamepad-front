@@ -66,7 +66,11 @@ const Game = () => {
       try {
         const response = await axios.get(
           `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&search=${gameSameType}`
-          //requete par genre de jeu (ex: action)
+
+          // requete vers le back fonctionne!!!! plus besoin de clé Api et requete vers serveur local et plus tard northflank
+          // `http://localhost:3000/games?search=${gameSameType}`
+
+          //requete par genre de jeu (ex: action): obsolète
           // `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&genres=${gameSameType}`
         );
         setGameSameType2(response.data.results);
