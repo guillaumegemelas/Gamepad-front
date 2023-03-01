@@ -14,6 +14,10 @@ const Game = () => {
   const [platforms, setPlatforms] = useState([]);
   //state publisher
   const [publisher, setPublisher] = useState([]);
+  //state genre
+  const [genre, setGenre] = useState([]);
+  //state developer
+  const [developer, setDeveloper] = useState([]);
 
   //   recupération de l'id?
   const { id } = useParams();
@@ -27,9 +31,13 @@ const Game = () => {
         setGameCheck(response.data);
         console.log(response.data, "reponse data game");
         setPublisher(response.data.publishers);
-        console.log(response.data.publishers, "reponse data publishers");
+        // console.log(response.data.publishers, "reponse data publishers");
         setPlatforms(response.data.platforms);
-        console.log(response.data.platforms, "reponse data platforms");
+        // console.log(response.data.platforms, "reponse data platforms");
+        setGenre(response.data.genres);
+        // console.log(response.data.genres);
+        setDeveloper(response.data.developers);
+        // console.log(response.data.developers);
         setIsLoading(false);
       } catch (error) {
         console.log(error.message);
@@ -65,23 +73,27 @@ const Game = () => {
               </div>
               <div className="plateformBlock">
                 <div className="columnOne">
-                  <div>
+                  <div className="oneThird">
                     <h1 className="greyText">Plateforms</h1>
                     {/* création d'un nouveau state pour boucler sur le résultat d'un tableau */}
-                    {platforms.map((elem, index) => {
-                      return (
-                        <div className="platformResult" key={index}>
-                          <p>{elem.platform.name}</p>
-                        </div>
-                      );
-                    })}
+                    <div className="scrolable1">
+                      {platforms.map((elem, index) => {
+                        //   if (index % 5 === 0)
+                        return (
+                          <div className="platformResult" key={index}>
+                            <span>{elem.platform.name}</span>
+                          </div>
+                        );
+                      })}{" "}
+                    </div>
                   </div>
-                  <div>
+                  <div className="oneThird">
                     <h1 className="greyText">Released date</h1>
                     <p>{gameCheck.released}</p>
                   </div>
-                  <div>
+                  <div className="oneThird">
                     <h1 className="greyText">Publisher</h1>
+
                     {publisher.map((elem, index) => {
                       return (
                         <div className="platformResult" key={index}>
@@ -92,12 +104,48 @@ const Game = () => {
                   </div>
                 </div>
 
-                <div>
-                  <p className="greyText">Genre</p>
-                  {/* <p>{gameCheck.genres}</p> */}
+                <div className="columnTwo">
+                  <div className="oneThird">
+                    <h1 className="greyText">Genre</h1>
+                    {genre.map((elem, index) => {
+                      return (
+                        <div className="platformResult" key={index}>
+                          <p>{elem.name}</p>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <div className="oneThird">
+                    <h1 className="greyText">Developer</h1>
+                    {developer.map((elem, index) => {
+                      return (
+                        <div className="platformResult" key={index}>
+                          <p>{elem.name}</p>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <div className="oneThird">
+                    <h1 className="greyText">Rating</h1>
+                    <p>{gameCheck.rating}</p>
+                  </div>
                 </div>
               </div>
-              {/* <p>{gameCheck.description_raw}</p> */}
+              <div className="about">
+                <h1 className="greyText">About</h1>
+                <div ellipsizeMode="tail" className="scrolable">
+                  <p>{gameCheck.description_raw}</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          {/* seconde section: jeux similaires au jeu choisi */}
+          <section className="similarGames">
+            <h1>Games like {gameCheck.name}</h1>
+
+            <div>
+              {/* il trouver 5 jeux similaires au jeu en question
+                map sur response.data? */}
             </div>
           </section>
         </div>

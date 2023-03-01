@@ -10,12 +10,13 @@ const Homepage = () => {
   const [games, setGames] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [search, setSearch] = useState("");
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&search=${search}`
+          `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&search=${search}&page=${page}`
         );
         setGames(response.data);
         console.log(response.data.results[0], "response data result[0]");
@@ -28,7 +29,7 @@ const Homepage = () => {
       }
     };
     fetchData();
-  }, [search]);
+  }, [search, page]);
 
   // j'ai bien une réponse du serveur avec tous les jeux
   return (
@@ -38,7 +39,7 @@ const Homepage = () => {
           <h1>En cours de chargement</h1>
         </div>
       ) : (
-        <div>
+        <div className="global">
           {/* searchbar: filtre par nom -----------------------------------------------------------*/}
           <section className="searchBar">
             <div className="homePageLogo">
@@ -53,13 +54,48 @@ const Homepage = () => {
             />
             <p>Search: {games.count} games</p>
           </section>
-          <div className="homeh1">
-            <h1>Most Relevance Games</h1>
-          </div>
+          {/* Filtres: platform, type, et sort by -----------------------------------------------------------*/}
+          {/* ils doivent apparaitre si on rentre une case dans search */}
 
-          {/* reponse serveur: games du moment -----------------------------------------------------------*/}
+          {!search ? (
+            <div className="homeh1">
+              <h1>Most Relevance Games</h1>
+            </div>
+          ) : (
+            <section className="filters">
+              <div className="filter1">
+                <div>
+                  <p>Plateform</p>
+                </div>
+                <div>
+                  <p>Type</p>
+                </div>
+              </div>
+              <div className="filter2">
+                <div>
+                  <p>sort by</p>
+                </div>
+                <button>
+                  <p>Filters: Go</p>
+                </button>
+              </div>
+            </section>
+          )}
+
+          {/* reponse serveur: games du moment --------------------------------------------------------*/}
           <section>
             <GameCard games={games} />
+          </section>
+          {/* système de pagination ----------------------------------------------------------------*/}
+          <section className="pagination">
+            <input
+              type="number"
+              min="1"
+              max="25"
+              value={page}
+              placeholder="page"
+              onChange={(event) => setPage(event.target.value)}
+            />
           </section>
         </div>
       )}
