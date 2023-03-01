@@ -71,7 +71,7 @@
   color: white;
   width: 1100px;
   height: 30px;
-  background-color: pink;
+  /* background-color: pink; */
   margin: 0 auto;
   margin-top: 45px;
   margin-bottom: 10px;
@@ -306,3 +306,45 @@
 .footer button:hover {
   color: #fd4656;
 }
+
+/* dropdown test--------------------------------------------- */
+
+/* .dropdown-container {
+  text-align: left;
+
+  width: 120px;
+  height: 90%;
+
+  border: 1px solid #fd4656;
+  position: relative;
+  border-radius: 5px;
+}
+
+.dropdown-input {
+  padding: 5px;
+
+  color: black;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+.dropdown-menu {
+  position: absolute;
+  transform: translateY(4px);
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: auto;
+  max-height: 150px;
+  background-color: #fff;
+}
+
+.dropdown-item {
+  padding: 5px;
+  cursor: pointer;
+}
+.dropdown-item:hover {
+  background-color: #1f2024;
+} */

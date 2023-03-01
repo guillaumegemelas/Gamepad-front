@@ -3,6 +3,9 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import GameCard from "../components/GameCard";
 
+//import du sélecteur
+// import Dropdown from "../components/Dropdown";
+
 import logo from "../img/logo.jpg";
 
 //page principal sur la quelle apparaissent tous les jeux issu de l'API
@@ -12,14 +15,27 @@ const Homepage = () => {
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
 
+  //toutes les plateformes selectionnés au state initial
+  // const [platforms, setPlatforms] = useState(
+  //   "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,187"
+  // );
+  //
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
+          // requete sans platform
           `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&search=${search}&page=${page}`
+
+          // `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&search=${search}&page=${page}&platforms=${platforms}`
         );
         setGames(response.data);
-        console.log(response.data.results[0], "response data result[0]");
+        //
+        // setPlatforms(response.data.results);
+        // console.log(response.data.results, "reponse data platforms");
+        //
+        // console.log(response.data.results[0], "response data result[0]");
         console.log(response.data, "response data");
         //renvoie les résultats de la requete à l'API
         setIsLoading(false);
@@ -65,7 +81,30 @@ const Homepage = () => {
             <section className="filters">
               <div className="filter1">
                 <div>
-                  <p>Plateform</p>
+                  {/* test platform */}
+                  {/* <input
+                    type="number"
+                    min="1"
+                    max="18"
+                    value={platforms}
+                    className="plf"
+                    placeholder="Platform"
+                    onChange={(event) => setPlatforms(event.target.value)}
+                  /> */}
+                  {/* {platforms.map((elemPlf, index) => {
+                    return (
+                      <div key={index}>
+                        <Dropdown
+                          placeholder="Platform..."
+                          options={elemPlf.platforms}
+                        />
+
+                        <p>{elem.id}</p>
+                      </div>
+                    );
+                  })} */}
+
+                  {/* test platform */}
                 </div>
                 <div>
                   <p>Type</p>

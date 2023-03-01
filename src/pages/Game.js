@@ -133,7 +133,7 @@ const Game = () => {
               </div>
               <div className="about">
                 <h1 className="greyText">About</h1>
-                <div ellipsizeMode="tail" className="scrolable">
+                <div ellipsizemode="tail" className="scrolable">
                   <p>{gameCheck.description_raw}</p>
                 </div>
               </div>
