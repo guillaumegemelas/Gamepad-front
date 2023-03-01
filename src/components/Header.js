@@ -1,10 +1,10 @@
-import logo from "../img/logo.jpg";
+import logo1 from "../img/logo1.png";
 
 const Header = () => {
   return (
     <div className="header">
       <div className="logo">
-        <img src={logo} alt="logo GamePad" />
+        <img src={logo1} alt="logo GamePad" />
       </div>
     </div>
   );

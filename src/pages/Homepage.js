@@ -6,7 +6,7 @@ import GameCard from "../components/GameCard";
 //import du sélecteur
 // import Dropdown from "../components/Dropdown";
 
-import logo from "../img/logo.jpg";
+import logo1 from "../img/logo1.png";
 
 //page principal sur la quelle apparaissent tous les jeux issu de l'API
 const Homepage = () => {
@@ -59,7 +59,7 @@ const Homepage = () => {
           {/* searchbar: filtre par nom -----------------------------------------------------------*/}
           <section className="searchBar">
             <div className="homePageLogo">
-              <img src={logo} alt="logo GamePad" />
+              <img src={logo1} alt="logo GamePad" />
             </div>
             <input
               className="search"

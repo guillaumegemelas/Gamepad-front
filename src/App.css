@@ -9,14 +9,17 @@
   align-items: center;
   height: 80px;
   background-color: #1f2024;
-  border-bottom: 2px solid #fd4656;
+  border-bottom: 2px solid #21a1b3;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 999;
 }
 .logo img {
-  height: 50px;
+  width: 190px;
+  height: 80px;
+  object-fit: cover;
+  /* height: 50px; */
   margin-left: 50px;
 }
 
@@ -24,7 +27,11 @@
 .Home {
   background-color: #1f2024;
   margin-top: 80px;
+  /* background-image: url("../src/img/bgimg.jpg");
+  background-size: cover; */
+  background-color: #1f2024;
 }
+
 .homeh1 {
   width: 1080px;
   margin: 0 auto;
@@ -38,22 +45,26 @@
 .searchBar {
   display: flex;
   height: 180px;
-  background-color: #1f2024;
+  /* background-color: #1f2024; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .homePageLogo img {
-  width: 400px;
+  width: 200px;
+  height: 90px;
+  object-fit: cover;
   margin-top: 15px;
 }
 .searchBar input {
   width: 400px;
-  height: 40px;
+  height: 50px;
   border: none;
   border-radius: 5px;
   margin-bottom: 10px;
+  background-color: #3f414a;
+  border-bottom: 1px solid #21a1b3;
 }
 .searchBar input::placeholder {
   color: rgb(184, 180, 180);
@@ -90,7 +101,7 @@
   flex-wrap: wrap;
   width: 1100px;
   height: 1200px;
-  background-color: #1f2024;
+  /* background-color: #1f2024; */
   /* border: 2px solid black; */
   padding-bottom: 50px;
 }
@@ -114,10 +125,10 @@
   /* background-color: #fff; */
 }
 .pagination input {
-  border: #fd4656 1px solid;
+  border: #21a1b3 1px solid;
   border-radius: 5px;
   color: white;
-  background-color: #1f2024;
+  background-color: #3f414a;
   text-align: center;
   font-family: "Georama", sans-serif;
   font-size: 15px;
@@ -181,7 +192,7 @@
 }
 .gameResult > h1 {
   font-size: 28px;
-  text-decoration: underline #fd4656;
+  text-decoration: underline #21a1b3;
   padding-top: 90px;
   margin-bottom: 35px;
 }
@@ -272,7 +283,7 @@
 
 .similarGames > h1 {
   font-size: 28px;
-  text-decoration: underline #fd4656;
+  text-decoration: underline #21a1b3;
   padding-top: 90px;
   margin-bottom: 35px;
 }
@@ -320,7 +331,7 @@
 .footer {
   display: flex;
   justify-content: center;
-  border-top: 2px solid #fd4656;
+  border-top: 2px solid #6dbcb9;
   color: azure;
   align-items: center;
   height: 100px;
@@ -343,7 +354,7 @@
 }
 
 .footer button:hover {
-  color: #fd4656;
+  color: #21a1b3;
 }
 
 /* dropdown test--------------------------------------------- */
