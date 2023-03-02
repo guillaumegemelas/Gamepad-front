@@ -19,7 +19,7 @@ const GameCard = ({ games }) => {
           <section key={index}>
             <div>
               <Link className="gameCard" to={`/game/${elem.id}`}>
-                <div>
+                <div className="hoverCard">
                   {/* <MdChevronLeft onClick={slideLeft} size={30} /> */}
                   <div id="slider" className="carousel">
                     <img src={elem.background_image} alt="picture1" />

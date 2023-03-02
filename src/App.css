@@ -32,7 +32,7 @@
 /* Homepage ----------------------------------------------------*/
 .Home {
   background-color: #1f2024;
-  margin-top: 80px;
+  padding-top: 80px;
   /* background-image: url("../src/img/bgimg.jpg");
   background-size: cover; */
   background-color: #1f2024;
@@ -182,10 +182,15 @@
   /* il faudrait ajouter de l'opacité derrière le texte en blanc */
 }
 
+.hoverCard:hover {
+  /* box-shadow: 1px 1px 15px rgb(190, 188, 188); */
+  box-shadow: 1px 1px 15px #21a1b3;
+}
+
 /* GamePage--------------------------------------------- */
 
 .gamePage {
-  margin-top: 80px;
+  padding-top: 80px;
   background-color: #1f2024;
 }
 

@@ -190,10 +190,12 @@ const Game = () => {
                 map sur response.data?-------------------------------------*/}
               {gameSameType2.length !== 0 && (
                 <div className="gamesPickUp">
-                  {/* OK mais renvoie tjs l'index de 1 à 5 au lieu d'un pick aléatoire */}
+                  {/* OK mais renvoie tjs l'index de 1 à 5 au lieu d'un pick aléatoire, index compris entre 
+                  2 et 6 pour éviter que le résultat renvoi l'index 1 qui correspond au jeu  présenté */}
                   {gameSameType2.map((elem, index) => {
                     return (
-                      index < 5 && (
+                      index > 1 &&
+                      index < 7 && (
                         <div key={elem.id} className="gameCard1">
                           <img src={elem.background_image} alt="picture2" />
 
