@@ -11,11 +11,13 @@ import Home from "./pages/Home";
 import Homepage from "./pages/Homepage";
 import Game from "./pages/Game";
 import Footer from "./components/Footer";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
 
 //import des font d'icones vectorielles
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faMessage, faInbox } from "@fortawesome/free-solid-svg-icons";
-import Signup from "./pages/Signup";
+
 library.add(faMessage, faInbox);
 
 function App() {
@@ -42,7 +44,10 @@ function App() {
             path="/user/signup"
             element={<Signup handleToken={handleToken} />}
           />
-          <Route />
+          <Route
+            path="/user/login"
+            element={<Login handleToken={handleToken} />}
+          />
         </Routes>
         <Footer />
       </Router>

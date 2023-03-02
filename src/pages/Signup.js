@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Signup = ({ handleToken }) => {
   const [username, setUsername] = useState("");
@@ -96,6 +96,12 @@ const Signup = ({ handleToken }) => {
         <button className="inscriptionButton" type="submit">
           Sign up
         </button>
+        <Link to={"/user/login"}>
+          {" "}
+          <p style={{ color: "#21a1b3", fontSize: 18 }}>
+            Already have an account, please log in
+          </p>
+        </Link>
         {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
       </form>
     </div>

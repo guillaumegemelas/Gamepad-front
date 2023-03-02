@@ -471,10 +471,19 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  height: 420px;
+  height: 430px;
   margin-top: 30px;
 }
-.formSign button {
+.formSign1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 320px;
+  margin-top: 30px;
+}
+.formSign button,
+.formSign1 button {
   height: 50px;
   width: 370px;
   font-size: 20px;
@@ -486,8 +495,10 @@ a {
   background-color: #21a1b3;
   border-radius: 5px;
   margin-top: 20px;
+  margin-bottom: 10px;
 }
-.formSign input {
+.formSign input,
+.formSign1 input {
   width: 350px;
   height: 50px;
   border: none;
@@ -501,6 +512,9 @@ a {
   border-bottom: 1px solid #21a1b3;
 }
 .formSign button:hover {
+  color: #3f414a;
+}
+.formSign1 button:hover {
   color: #3f414a;
 }
 

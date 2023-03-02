@@ -1,14 +1,18 @@
 import logo1 from "../img/logo1.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Header = ({ handleToken, token }) => {
   const navigate = useNavigate();
 
   return (
     <div className="header">
-      <div className="logo">
-        <img src={logo1} alt="logo GamePad" />
-      </div>
+      <Link to={"/"}>
+        {" "}
+        <div className="logo">
+          <img src={logo1} alt="logo GamePad" />
+        </div>
+      </Link>
+
       {/* boutons login et signup ----------------------*/}
       <div className="connectButons1">
         {token ? (
