@@ -2,6 +2,7 @@ import axios from "axios";
 
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 //import icones
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -19,7 +20,8 @@ const Game = () => {
   //state developer
   const [developer, setDeveloper] = useState([]);
   //state pour seconde requete
-  const [gameSameType, setGameSameType] = useState("");
+  const [search, setSearch] = useState("");
+  // const [gameSameType, setGameSameType] = useState("");
   const [gameSameType2, setGameSameType2] = useState([]);
 
   // const randomNumber = Math.floor(Math.random() * (20000 - 1)) + 1;
@@ -33,17 +35,21 @@ const Game = () => {
       try {
         const response = await axios.get(
           `https://api.rawg.io/api/games/${id}?key=b144d325b8cd4cee8a7ad6c204cab7d2`
+
+          // requete vers le back fonctionne!!!! plus besoin de clé Api et requete vers serveur local et plus tard northflank:
+          // `http://localhost:3000/games?/${id}`
         );
         setGameCheck(response.data);
-        // console.log(response.data, "reponse data game");
+        console.log(response.data, "reponse data game");
         setPublisher(response.data.publishers);
         // console.log(response.data.publishers, "reponse data publishers");
         setPlatforms(response.data.platforms);
         // console.log(response.data.platforms, "reponse data platforms");
         setGenre(response.data.genres);
         console.log(response.data.genres);
+        setSearch(response.data.name);
         //a mettre en lowercase pour la requete sinon ne passe pas
-        setGameSameType(response.data.name.toLowerCase());
+        // setSearch(response.data.name.toLowerCase());
         console.log(
           response.data.genres[0].name,
           "first requete------------------"
@@ -65,10 +71,10 @@ const Game = () => {
     const fetchGame = async () => {
       try {
         const response = await axios.get(
-          `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&search=${gameSameType}`
+          `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&search=${search}`
 
           // requete vers le back fonctionne!!!! plus besoin de clé Api et requete vers serveur local et plus tard northflank
-          // `http://localhost:3000/games?search=${gameSameType}`
+          // `http://localhost:3000/games/search?search=${search}`
 
           //requete par genre de jeu (ex: action): obsolète
           // `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&genres=${gameSameType}`
@@ -85,7 +91,7 @@ const Game = () => {
       }
     };
     fetchGame();
-  }, [gameSameType]);
+  }, [search]);
 
   //test seconde requete pour ajouter 5 jeux du même genre----------------------------
 
@@ -196,13 +202,20 @@ const Game = () => {
                     return (
                       index > 1 &&
                       index < 7 && (
-                        <div key={elem.id} className="gameCard1">
-                          <img src={elem.background_image} alt="picture2" />
+                        // test link pour renvoyer nouvelle requete avec jeu selectionné dans les 5 présents
+                        <Link
+                          key={elem.id}
+                          className="gameCard"
+                          to={`/game/${elem.id}`}
+                        >
+                          <div className="gameCard1">
+                            <img src={elem.background_image} alt="picture2" />
 
-                          <div>
-                            <h1>{elem.name}</h1>
+                            <div>
+                              <h1>{elem.name}</h1>
+                            </div>
                           </div>
-                        </div>
+                        </Link>
                       )
                     );
                   })}

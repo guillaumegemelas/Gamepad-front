@@ -338,6 +338,12 @@
 
   /* il faudrait ajouter de l'opacité derrière le texte en blanc */
 }
+
+.gameCard1:hover {
+  /* box-shadow: 1px 1px 15px rgb(190, 188, 188); */
+  box-shadow: 1px 1px 15px #21a1b3;
+}
+
 /* Footer--------------------------------------------- */
 .footer {
   display: flex;
