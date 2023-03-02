@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Game = () => {
-  const [gameCheck, setGameCheck] = useState("");
+  const [gameCheck, setGameCheck] = useState({});
   //   bien mettre ("") pour éviter undefined à chargement page
   const [isLoading, setIsLoading] = useState();
   //state platforms
@@ -34,10 +34,10 @@ const Game = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://api.rawg.io/api/games/${id}?key=b144d325b8cd4cee8a7ad6c204cab7d2`
+          // `https://api.rawg.io/api/games/${id}?key=b144d325b8cd4cee8a7ad6c204cab7d2`
 
           // requete vers le back fonctionne!!!! plus besoin de clé Api et requete vers serveur local et plus tard northflank:
-          // `http://localhost:3000/games?/${id}`
+          `http://localhost:3000/games/${id}`
         );
         setGameCheck(response.data);
         console.log(response.data, "reponse data game");
@@ -80,7 +80,7 @@ const Game = () => {
           // `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&genres=${gameSameType}`
         );
         setGameSameType2(response.data.results);
-        console.log(response.data.results, "************data.results******");
+        // console.log(response.data.results, "************data.results******");
         // console.log(gameSameType, "second requete------+ + + + +----");
         // console.log(response.data, "reponse data game Type");
 
@@ -126,13 +126,12 @@ const Game = () => {
                     {/* création d'un nouveau state pour boucler sur le résultat d'un tableau */}
                     <div className="scrolable1">
                       {platforms.map((elem, index) => {
-                        //   if (index % 5 === 0)
                         return (
                           <div className="platformResult" key={index}>
                             <span>{elem.platform.name}</span>
                           </div>
                         );
-                      })}{" "}
+                      })}
                     </div>
                   </div>
                   <div className="oneThird">
