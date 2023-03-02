@@ -2,6 +2,8 @@ import "./App.css";
 
 //import des Packages
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Cookies from "js-cookie";
+import { useState } from "react";
 
 //import des pages
 import Header from "./components/Header";
@@ -13,18 +15,33 @@ import Footer from "./components/Footer";
 //import des font d'icones vectorielles
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faMessage, faInbox } from "@fortawesome/free-solid-svg-icons";
+import Signup from "./pages/Signup";
 library.add(faMessage, faInbox);
 
 function App() {
+  const [token, setToken] = useState(Cookies.get("token") || null);
+  const handleToken = (token) => {
+    if (token) {
+      setToken(token);
+      Cookies.set("token", token, { expires: 10 });
+    } else {
+      setToken(null);
+      Cookies.remove("token");
+    }
+  };
+
   return (
     <div className="App">
       <Router>
-        <Header />
+        <Header handleToken={handleToken} token={token} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/games" element={<Homepage />} />
           <Route path="/game/:id" element={<Game />} />
-          <Route />
+          <Route
+            path="/user/signup"
+            element={<Signup handleToken={handleToken} />}
+          />
           <Route />
         </Routes>
         <Footer />
