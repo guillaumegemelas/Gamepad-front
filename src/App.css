@@ -28,6 +28,42 @@
   /* height: 50px; */
   margin-left: 50px;
 }
+.connectButons,
+.connectButons1 {
+  padding-right: 40px;
+}
+
+.connectButons button {
+  height: 30px;
+  width: 100px;
+  background-color: #1f2024;
+  font-family: "Georama", sans-serif;
+  font-size: 17px;
+  color: rgb(184, 180, 180);
+  border: none;
+  /* border-bottom: 1px solid #21a1b3; */
+}
+.connectButons1 button {
+  height: 30px;
+  width: 100px;
+  background-color: #1f2024;
+  font-family: "Georama", sans-serif;
+  font-size: 17px;
+  color: rgb(184, 180, 180);
+  border: none;
+  /* border-bottom: 1px solid #21a1b3; */
+}
+.connectButons .but1 {
+  border-right: 1px solid #21a1b3;
+}
+
+.connectButons1 button:hover {
+  color: rgb(147, 59, 69);
+}
+
+.connectButons button:hover {
+  color: #21a1b3;
+}
 
 /* Home --------------------------------------------------------*/
 
@@ -111,13 +147,16 @@ a {
   border: none;
   border-radius: 5px;
   margin-bottom: 10px;
+  font-size: 17px;
+  padding-left: 20px;
+  color: white;
   background-color: #3f414a;
   border-bottom: 1px solid #21a1b3;
 }
 .searchBar input::placeholder {
   color: rgb(184, 180, 180);
   font-family: "Georama", sans-serif;
-  padding-left: 10px;
+  /* padding-left: 10px; */
 }
 .searchBar p {
   color: #fff;
