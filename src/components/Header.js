@@ -14,17 +14,27 @@ const Header = ({ handleToken, token }) => {
       </Link>
 
       {/* boutons login et signup ----------------------*/}
-      <div className="connectButons1">
+      <div>
         {token ? (
-          <button
-            className="but0"
-            onClick={() => {
-              handleToken(null);
-              navigate("/");
-            }}
-          >
-            Disconnect
-          </button>
+          <div className="connectButons1">
+            <button
+              className="but2"
+              onClick={() => {
+                navigate("/favourites");
+              }}
+            >
+              My Collection
+            </button>
+            <button
+              className="but0"
+              onClick={() => {
+                handleToken(null);
+                navigate("/");
+              }}
+            >
+              Disconnect
+            </button>
+          </div>
         ) : (
           <div className="connectButons">
             <button className="but1" onClick={() => navigate("/user/signup")}>

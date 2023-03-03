@@ -45,7 +45,7 @@
 }
 .connectButons1 button {
   height: 30px;
-  width: 100px;
+  width: 140px;
   background-color: #1f2024;
   font-family: "Georama", sans-serif;
   font-size: 17px;
@@ -57,10 +57,12 @@
   border-right: 1px solid #21a1b3;
 }
 
-.connectButons1 button:hover {
+.connectButons1 .but0:hover {
   color: rgb(147, 59, 69);
 }
-
+.connectButons1 .but2:hover {
+  color: #21a1b3;
+}
 .connectButons button:hover {
   color: #21a1b3;
 }
@@ -422,6 +424,13 @@ a {
 
 .gameCard1:hover {
   /* box-shadow: 1px 1px 15px rgb(190, 188, 188); */
+  box-shadow: 1px 1px 15px #21a1b3;
+}
+
+.favBut:hover {
+  box-shadow: 1px 1px 15px #21a1b3;
+}
+.addBut:hover {
   box-shadow: 1px 1px 15px #21a1b3;
 }
 

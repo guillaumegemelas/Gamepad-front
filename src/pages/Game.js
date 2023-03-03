@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 //import icones
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Game = () => {
+const Game = ({ token }) => {
   const [gameCheck, setGameCheck] = useState({});
   //   bien mettre ("") pour éviter undefined à chargement page
   const [isLoading, setIsLoading] = useState();
@@ -111,14 +111,45 @@ const Game = () => {
               <img src={gameCheck.background_image} alt="game pic" />
             </div>
             <div className="secondColumn">
-              <div className="items">
-                <button>
-                  Save a collection <FontAwesomeIcon icon="inbox" />
-                </button>
-                <button>
-                  <p> Add a</p>
-                  review <FontAwesomeIcon icon="message" />
-                </button>
+              <div>
+                {/* il faut envoyer en favoris au clique le nom et l'image du jeu */}
+                {/* le bouton n'apparait que si l'utilisateur est connecté */}
+                {token && (
+                  <div className="items">
+                    <button
+                      className="favBut"
+                      onClick={async () => {
+                        try {
+                          const response = await axios.post(
+                            "http://localhost:3000/addfavourites",
+                            {
+                              name: gameCheck.name,
+                              //vérifier le chemib de l'img, pas sur de mon coup
+                              image: gameCheck.background_image,
+                            }
+                          );
+                          alert("Added to Favourites");
+                          console.log(response.data);
+                        } catch (error) {
+                          // il faut gérer l'impossibilité d'ajouter le favori 2 fois de suite dans les favoris
+                          console.log(error.message);
+                          if (
+                            error.message ===
+                            "Request failed with status code 409"
+                          ) {
+                            alert("Favourites already added");
+                          }
+                        }
+                      }}
+                    >
+                      Save a collection <FontAwesomeIcon icon="inbox" />
+                    </button>
+                    <button className="addBut">
+                      <p> Add a</p>
+                      review <FontAwesomeIcon icon="message" />
+                    </button>
+                  </div>
+                )}
               </div>
               <div className="plateformBlock">
                 <div className="columnOne">

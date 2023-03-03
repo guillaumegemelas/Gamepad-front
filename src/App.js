@@ -13,6 +13,7 @@ import Game from "./pages/Game";
 import Footer from "./components/Footer";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import Favourite from "./pages/Favourites";
 
 //import des font d'icones vectorielles
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -39,7 +40,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/games" element={<Homepage />} />
-          <Route path="/game/:id" element={<Game />} />
+          <Route path="/game/:id" element={<Game token={token} />} />
           <Route
             path="/user/signup"
             element={<Signup handleToken={handleToken} />}
@@ -48,7 +49,9 @@ function App() {
             path="/user/login"
             element={<Login handleToken={handleToken} />}
           />
+          <Route path="/favourites" element={<Favourite />} />
         </Routes>
+
         <Footer />
       </Router>
     </div>
