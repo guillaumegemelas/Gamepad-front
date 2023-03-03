@@ -562,3 +562,9 @@ a {
 .filter2 button:hover {
   color: #21a1b3;
 }
+
+.test span {
+  text-decoration: #21a1b3 underline 1px;
+
+  font-style: italic;
+}

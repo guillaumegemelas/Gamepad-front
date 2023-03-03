@@ -20,7 +20,7 @@ const Homepage = () => {
 
   const options = [
     { label: "Default", value: "" },
-    { label: "Rating", value: "rating" },
+    { label: "Rating", value: "-rating" },
     { label: "Date", value: "-added" },
     { label: "Name", value: "name" },
   ];
@@ -35,10 +35,10 @@ const Homepage = () => {
       try {
         const response = await axios.get(
           // requete vers API directe
-          `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&search=${search}&page=${page}&ordering=${value}`
+          // `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&search=${search}&page=${page}&ordering=${value}`
 
           // requete vers le back fonctionne sauf filtres plus besoin de clé Api et requete vers serveur local et plus tard northflank:
-          // `http://localhost:3000/games?&search=${search}&page=${page}&ordering=${value}`
+          `http://localhost:3000/games?&search=${search}&page=${page}&value=${value}`
         );
         setGames(response.data);
         //
@@ -78,7 +78,25 @@ const Homepage = () => {
               placeholder="Search for a game..."
               onChange={(event) => setSearch(event.target.value)}
             />
-            <p>Search: {games.count} games</p>
+            <p className="search1">
+              Search{"  "}
+              {search && (
+                <span>
+                  Results for{" "}
+                  <span
+                    className="test"
+                    style={{
+                      fontStyle: "italic",
+                      textDecoration: "#21a1b3 underline 1px",
+                    }}
+                  >
+                    "{search}"
+                  </span>
+                  <span> ✔︎ </span>
+                </span>
+              )}{" "}
+              {games.count} games
+            </p>
           </section>
           {/* Filtres: platform, type, et sort by -----------------------------------------------------------*/}
           {/* ils doivent apparaitre si on rentre une case dans search */}
