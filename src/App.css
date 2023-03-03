@@ -529,42 +529,36 @@ a {
 }
 /* dropdown test--------------------------------------------- */
 
-/* .dropdown-container {
-  text-align: left;
-
-  width: 120px;
-  height: 90%;
-
-  border: 1px solid #fd4656;
-  position: relative;
+.dropdown {
+  margin-left: 10px;
+  font-size: 18px;
+}
+.dropSelect {
+  width: 100px;
+  color: #fff;
+  height: 30px;
+  margin-left: 10px;
+  border: none;
   border-radius: 5px;
+  font-family: "Georama", sans-serif;
+  font-size: 16px;
+  background-color: #3f414a;
+  border-bottom: 1px solid #21a1b3;
 }
-
-.dropdown-input {
-  padding: 5px;
-
-  color: black;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  user-select: none;
+.dropOption {
+  color: #fff;
+  background-color: #3f414a;
 }
-.dropdown-menu {
-  position: absolute;
-  transform: translateY(4px);
-  width: 100%;
-  border: 1px solid #ccc;
+.filter2 button {
+  color: rgb(184, 180, 180);
+  width: 100px;
   border-radius: 5px;
-  overflow: auto;
-  max-height: 150px;
-  background-color: #fff;
+  font-family: "Georama", sans-serif;
+  font-size: 16px;
+  background-color: #3f414a;
+  border: 1px solid #21a1b3;
+  margin-right: 10px;
 }
-
-.dropdown-item {
-  padding: 5px;
-  cursor: pointer;
+.filter2 button:hover {
+  color: #21a1b3;
 }
-.dropdown-item:hover {
-  background-color: #1f2024;
-} */

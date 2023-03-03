@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import GameCard from "../components/GameCard";
 
 //import du sélecteur
-// import Dropdown from "../components/Dropdown";
+import Dropdown from "../components/Dropdown";
 
 import logo1 from "../img/logo1.png";
 
@@ -15,21 +15,30 @@ const Homepage = () => {
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
 
-  //toutes les plateformes selectionnés au state initial
-  // const [platforms, setPlatforms] = useState(
-  //   "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,187"
-  // );
-  //
+  //test ordering ave Dropdown: à voir state intitial+++++++++++++++++++++++++++++++++
+  const [value, setValue] = useState("");
+
+  const options = [
+    { label: "Default", value: "" },
+    { label: "Rating", value: "rating" },
+    { label: "Date", value: "-added" },
+    { label: "Name", value: "name" },
+  ];
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+
+  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
           // requete sans platform
-          `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&search=${search}&page=${page}`
+          `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&search=${search}&page=${page}&ordering=${value}`
 
           // requete vers le back fonctionne!!!! plus besoin de clé Api et requete vers serveur local et plus tard northflank:
-          // `http://localhost:3000/games?&search=${search}&page=${page}`
+          // `http://localhost:3000/games?&search=${search}&page=${page}&ordering=${value}`
 
           // `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&search=${search}&page=${page}&platforms=${platforms}`
         );
@@ -48,7 +57,7 @@ const Homepage = () => {
       }
     };
     fetchData();
-  }, [search, page]);
+  }, [search, page, value]);
 
   // j'ai bien une réponse du serveur avec tous les jeux
   return (
@@ -82,43 +91,23 @@ const Homepage = () => {
             </div>
           ) : (
             <section className="filters">
-              <div className="filter1">
-                <div>
-                  {/* test platform */}
-                  {/* <input
-                    type="number"
-                    min="1"
-                    max="18"
-                    value={platforms}
-                    className="plf"
-                    placeholder="Platform"
-                    onChange={(event) => setPlatforms(event.target.value)}
-                  /> */}
-                  {/* {platforms.map((elemPlf, index) => {
-                    return (
-                      <div key={index}>
-                        <Dropdown
-                          placeholder="Platform..."
-                          options={elemPlf.platforms}
-                        />
+              <div>
+                <div className="dropdown">
+                  {/* test dropdowm ordering */}
+                  <Dropdown
+                    className="dropdown1"
+                    label="Sort by"
+                    options={options}
+                    value={value}
+                    onChange={handleChange}
+                  />
 
-                        <p>{elem.id}</p>
-                      </div>
-                    );
-                  })} */}
-
-                  {/* test platform */}
-                </div>
-                <div>
-                  <p>Type</p>
+                  {/* test  dropdown */}
                 </div>
               </div>
               <div className="filter2">
-                <div>
-                  <p>sort by</p>
-                </div>
-                <button>
-                  <p>Filters: Go</p>
+                <button onClick={() => setValue("")}>
+                  <p>reset filters</p>
                 </button>
               </div>
             </section>

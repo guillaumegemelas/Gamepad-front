@@ -1,24 +1,16 @@
-// const Dropdown = ({ placeholder, options }) => {
-//   const getDisplay = () => {
-//     return placeholder;
-//   };
-//   return (
-//     <div className="dropdown-container">
-//       <div className="dropdown-input">
-//         <div className="dropdown-selected-value">{getDisplay()}</div>
-//         <div>
-//           <p style={{ fontSize: 20 }}>⌵</p>
-//         </div>
-//       </div>
-//       <div className="dropdown-menu">
-//         {options.map((option) => (
-//           <div key={option} className="dropdown-item">
-//             {option.label}
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
+const Dropdown = ({ label, value, options, onChange }) => {
+  return (
+    <label className="dropLabel">
+      {label}
+      <select className="dropSelect" value={value} onChange={onChange}>
+        {options.map((option, index) => (
+          <option key={index} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+    </label>
+  );
+};
 
-// export default Dropdown;
+export default Dropdown;
