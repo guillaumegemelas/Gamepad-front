@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // il va falloir faire une requete axios en get pour récupérer les favoris en base de données
-const Favourites = () => {
+const Favourites = ({ token }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   //   const [name, setName] = useState("");
@@ -47,6 +47,7 @@ const Favourites = () => {
 
           <div className="mapFav">
             {data.map((event, index) => {
+              //   if (event.token === token) {
               return (
                 <div key={index} className="favPage">
                   <div className="favImg">
@@ -57,6 +58,7 @@ const Favourites = () => {
                   </div>
                 </div>
               );
+              //   }
             })}
           </div>
         </div>

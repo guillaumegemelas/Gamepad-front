@@ -52,7 +52,7 @@ function App() {
             path="/user/login"
             element={<Login handleToken={handleToken} />}
           />
-          <Route path="/favourites" element={<Favourites />} />
+          <Route path="/favourites" element={<Favourites token={token} />} />
         </Routes>
 
         <Footer />

@@ -126,6 +126,8 @@ const Game = ({ token }) => {
                               name: gameCheck.name,
                               //vérifier le chemib de l'img, pas sur de mon coup
                               image: gameCheck.background_image,
+                              //test envoi token
+                              token: token,
                             }
                           );
                           alert("Added to Favourites");
