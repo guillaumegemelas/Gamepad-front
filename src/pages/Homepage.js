@@ -28,18 +28,47 @@ const Homepage = () => {
     setValue(event.target.value);
   };
 
-  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  //++test select by platform++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+  const [platforms, setPlatforms] = useState();
+
+  const optionsPlf = [
+    { label: "Default", value: "" },
+    { label: "PS5", value: "187" },
+    { label: "Xbox Serie X", value: "186" },
+    { label: "PS4", value: "18" },
+    { label: "PS3", value: "16" },
+    { label: "Xbox 360", value: "14" },
+    { label: "Xbox One", value: "1" },
+  ];
+  const handleChangePlf = (event) => {
+    setPlatforms(event.target.value);
+  };
+
+  //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
   useEffect(() => {
     const fetchData = async () => {
+      let response;
       try {
-        const response = await axios.get(
-          // requete vers API directe
-          // `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&search=${search}&page=${page}&ordering=${value}`
+        if (platforms) {
+          response = await axios.get(
+            // requete vers API directe
+            `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&search=${search}&page=${page}&ordering=${value}&platforms=${platforms}`
 
-          // requete vers le back fonctionne sauf filtres plus besoin de clé Api et requete vers serveur local et plus tard northflank:
-          `http://localhost:3000/games?&search=${search}&page=${page}&value=${value}`
-        );
+            // requete vers le back fonctionne sauf filtres plus besoin de clé Api et requete vers serveur local et plus tard northflank:
+            // `http://localhost:3000/games?&search=${search}&page=${page}&value=${value}`
+          );
+        } else {
+          response = await axios.get(
+            // requete vers API directe
+            `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&search=${search}&page=${page}&ordering=${value}`
+
+            // requete vers le back fonctionne sauf filtres plus besoin de clé Api et requete vers serveur local et plus tard northflank:
+            // `http://localhost:3000/games?&search=${search}&page=${page}&value=${value}`
+          );
+        }
+
         setGames(response.data);
         //
         // setPlatforms(response.data.results);
@@ -55,7 +84,7 @@ const Homepage = () => {
       }
     };
     fetchData();
-  }, [search, page, value]);
+  }, [search, page, value, platforms]);
 
   // j'ai bien une réponse du serveur avec tous les jeux
   return (
@@ -107,9 +136,8 @@ const Homepage = () => {
             </div>
           ) : (
             <section className="filters">
-              <div>
+              <div className="filters1">
                 <div className="dropdown">
-                  {/* test dropdowm ordering */}
                   <Dropdown
                     className="dropdown1"
                     label="Sort by"
@@ -117,12 +145,27 @@ const Homepage = () => {
                     value={value}
                     onChange={handleChange}
                   />
-
-                  {/* test  dropdown */}
                 </div>
               </div>
+              <div className="dropdown">
+                {/* test dropdowm plf */}
+                <Dropdown
+                  className="dropdown1"
+                  label="Platform"
+                  options={optionsPlf}
+                  value={value}
+                  onChange={handleChangePlf}
+                />
+
+                {/* test  dropdown */}
+              </div>
               <div className="filter2">
-                <button onClick={() => setValue("")}>
+                <button
+                  onClick={() => {
+                    setValue("");
+                    setPlatforms();
+                  }}
+                >
                   <p>reset filters</p>
                 </button>
               </div>
