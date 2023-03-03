@@ -15,7 +15,7 @@ const Homepage = () => {
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
 
-  //test ordering ave Dropdown: à voir state intitial+++++++++++++++++++++++++++++++++
+  //test ordering avec Dropdown: à voir state intitial+++++++++++++++++++++++++++++++++
   const [value, setValue] = useState("");
 
   const options = [
@@ -45,36 +45,78 @@ const Homepage = () => {
     setPlatforms(event.target.value);
   };
 
+  //++test select by genre++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+  const [genres, setGenres] = useState();
+
+  const optionsGen = [
+    { label: "Default", value: "" },
+    { label: "Action", value: "action" },
+    { label: "Indie", value: "indie" },
+    { label: "Adventure", value: "adventure" },
+    { label: "RPG", value: "role-playing-games-rpg" },
+    { label: "Strategy", value: "strategy" },
+    { label: "Shooter", value: "shooter" },
+    { label: "Casual", value: "casual" },
+    { label: "Simulation", value: "simulation" },
+    { label: "Puzzle", value: "puzzle" },
+    { label: "Arcade", value: "arcade" },
+    { label: "Platformer", value: "platformer" },
+    { label: "Racing", value: "racing" },
+    { label: "Sports", value: "sports" },
+    { label: "Fighting", value: "fighting" },
+    { label: "Family", value: "family" },
+    { label: "Educational", value: "educational" },
+    { label: "Card", value: "card" },
+  ];
+  const handleChangeGen = (event) => {
+    setGenres(event.target.value);
+  };
+
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
   useEffect(() => {
     const fetchData = async () => {
       let response;
       try {
-        if (platforms) {
+        //requete avec condition car si string vide au niveau du state plf (rien de renseigné), 0 jeux affichés donc obligé de dire si !plf alors
+        //requete sans tenir compte de plaforms=${platforms}
+        if (platforms && genres) {
           response = await axios.get(
             // requete vers API directe
-            `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&search=${search}&page=${page}&ordering=${value}&platforms=${platforms}`
+            // `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&search=${search}&page=${page}&ordering=${value}&platforms=${platforms}&genres=${genres}`
 
             // requete vers le back fonctionne sauf filtres plus besoin de clé Api et requete vers serveur local et plus tard northflank:
-            // `http://localhost:3000/games?&search=${search}&page=${page}&value=${value}`
+            `http://localhost:3000/games?&search=${search}&page=${page}&value=${value}&platforms=${platforms}&genres=${genres}`
+          );
+        } else if (platforms && !genres) {
+          response = await axios.get(
+            // requete vers API directe
+            // `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&search=${search}&page=${page}&ordering=${value}&platforms=${platforms}`
+
+            // requete vers le back fonctionne sauf filtres plus besoin de clé Api et requete vers serveur local et plus tard northflank:
+            `http://localhost:3000/games?&search=${search}&page=${page}&value=${value}&platforms=${platforms}`
+          );
+        } else if (!platforms && genres) {
+          response = await axios.get(
+            // requete vers API directe
+            // `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&search=${search}&page=${page}&ordering=${value}&genres=${genres}`
+
+            // requete vers le back fonctionne sauf filtres plus besoin de clé Api et requete vers serveur local et plus tard northflank:
+            `http://localhost:3000/games?&search=${search}&page=${page}&value=${value}&genres=${genres}`
           );
         } else {
           response = await axios.get(
             // requete vers API directe
-            `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&search=${search}&page=${page}&ordering=${value}`
+            // `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&search=${search}&page=${page}&ordering=${value}`
 
             // requete vers le back fonctionne sauf filtres plus besoin de clé Api et requete vers serveur local et plus tard northflank:
-            // `http://localhost:3000/games?&search=${search}&page=${page}&value=${value}`
+            `http://localhost:3000/games?&search=${search}&page=${page}&value=${value}`
           );
         }
 
         setGames(response.data);
-        //
-        // setPlatforms(response.data.results);
-        // console.log(response.data.results, "reponse data platforms");
-        //
-        // console.log(response.data.results[0], "response data result[0]");
+
         console.log(response.data, "response data");
         //renvoie les résultats de la requete à l'API
         setIsLoading(false);
@@ -84,7 +126,7 @@ const Homepage = () => {
       }
     };
     fetchData();
-  }, [search, page, value, platforms]);
+  }, [search, page, value, platforms, genres]);
 
   // j'ai bien une réponse du serveur avec tous les jeux
   return (
@@ -159,11 +201,21 @@ const Homepage = () => {
 
                 {/* test  dropdown */}
               </div>
+              <div className="dropdown">
+                <Dropdown
+                  className="dropdown1"
+                  label="Genre"
+                  options={optionsGen}
+                  value={value}
+                  onChange={handleChangeGen}
+                />
+              </div>
               <div className="filter2">
                 <button
                   onClick={() => {
                     setValue("");
                     setPlatforms();
+                    setGenres();
                   }}
                 >
                   <p>reset filters</p>
