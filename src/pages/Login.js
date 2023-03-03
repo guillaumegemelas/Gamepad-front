@@ -19,6 +19,7 @@ const Login = ({ handleToken }) => {
 
       if (response.data.token) {
         handleToken(response.data.token);
+        alert("Vous êtes maintenant connecté");
         navigate("/games");
       }
     } catch (error) {
