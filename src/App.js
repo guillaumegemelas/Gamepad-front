@@ -6,14 +6,17 @@ import Cookies from "js-cookie";
 import { useState } from "react";
 
 //import des pages
-import Header from "./components/Header";
 import Home from "./pages/Home";
 import Homepage from "./pages/Homepage";
 import Game from "./pages/Game";
-import Footer from "./components/Footer";
+
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
-import Favourite from "./pages/Favourites";
+import Favourites from "./pages/Favourites";
+
+//import des composants
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 //import des font d'icones vectorielles
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -49,7 +52,7 @@ function App() {
             path="/user/login"
             element={<Login handleToken={handleToken} />}
           />
-          <Route path="/favourites" element={<Favourite />} />
+          <Route path="/favourites" element={<Favourites />} />
         </Routes>
 
         <Footer />

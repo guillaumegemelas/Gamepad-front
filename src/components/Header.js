@@ -7,7 +7,6 @@ const Header = ({ handleToken, token }) => {
   return (
     <div className="header">
       <Link to={"/"}>
-        {" "}
         <div className="logo">
           <img src={logo1} alt="logo GamePad" />
         </div>
