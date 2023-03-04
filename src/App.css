@@ -591,7 +591,7 @@ a {
   flex-direction: column;
   padding-top: 80px;
   width: 1100px;
-  min-height: 100%;
+  min-height: 100vh;
   margin: 0 auto;
   background-color: #1f2024;
 }
@@ -660,12 +660,14 @@ a {
   width: 60px;
   height: 30px;
   border-radius: 5px;
-  font-family: "Georama", sans-serif;
-  font-size: 18px;
-  background-color: #3f414a;
+  font-size: 20px;
+  background: none;
   border: none;
-  border-bottom: 1px solid rgb(147, 59, 69);
 }
+.favimg button:hover {
+  color: rgb(147, 59, 69);
+}
+
 .favTitle {
   display: flex;
   align-items: center;
@@ -675,7 +677,7 @@ a {
 
 .favTitle button {
   color: rgb(184, 180, 180);
-  width: 120px;
+  width: 60px;
   height: 30px;
   border-radius: 5px;
   font-family: "Georama", sans-serif;

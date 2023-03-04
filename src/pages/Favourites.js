@@ -2,6 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+//import icones
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 // il va falloir faire une requete axios en get pour récupérer les favoris en base de données
 const Favourites = ({ token }) => {
   const [data, setData] = useState();
@@ -40,7 +43,7 @@ const Favourites = ({ token }) => {
                   navigate("/games");
                 }}
               >
-                To Home
+                <FontAwesomeIcon icon="house" />
               </button>
             </div>
           </div>
@@ -76,7 +79,10 @@ const Favourites = ({ token }) => {
                             }
                           }}
                         >
-                          delete
+                          <FontAwesomeIcon
+                            icon="trash-can"
+                            color="rgb(147, 59, 69)"
+                          />
                         </button>
                         {/* fin test suppression des favoris au bouton ----------*/}
                       </div>

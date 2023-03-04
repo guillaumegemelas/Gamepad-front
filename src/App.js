@@ -20,9 +20,14 @@ import Footer from "./components/Footer";
 
 //import des font d'icones vectorielles
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faMessage, faInbox } from "@fortawesome/free-solid-svg-icons";
+import {
+  faMessage,
+  faInbox,
+  faHouse,
+  faTrashCan,
+} from "@fortawesome/free-solid-svg-icons";
 
-library.add(faMessage, faInbox);
+library.add(faMessage, faInbox, faHouse, faTrashCan);
 
 function App() {
   const [token, setToken] = useState(Cookies.get("token") || null);
