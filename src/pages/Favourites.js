@@ -47,18 +47,41 @@ const Favourites = ({ token }) => {
 
           <div className="mapFav">
             {data.map((event, index) => {
-              //les fav s'entregistrent pour tout le mon de pareil!!!!!
+              //nécessité d'avoir le token pour lire fav lié  un user et l'id pour le delete fav
               console.log(token, "-----token connecté------");
               console.log(event.token, "------tokenfavoris++++++++");
+              console.log(event._id, "*********fav id**********");
               return (
-                <div>
-                  {" "}
+                <div key={index}>
                   {token === event.token && (
-                    <div key={index} className="favPage">
+                    <div key={event._id} className="favPage">
                       <div className="favImg">
                         <img src={event.image} alt="favimg" />
+
+                        {/* test suppression des favoris au clique sur bouton ---------*/}
+                        <button
+                          onClick={async () => {
+                            try {
+                              const response = await axios.delete(
+                                `http://localhost:3000/favourites/delete/${event._id}`
+                              );
+                              setData(response.data.favourites);
+                              console.log(response.data.favourites);
+                              alert("favourite deleted");
+                            } catch (error) {
+                              console.log(
+                                error.response,
+                                "error delete fav**************"
+                              );
+                            }
+                          }}
+                        >
+                          delete
+                        </button>
+                        {/* fin test suppression des favoris au bouton ----------*/}
                       </div>
-                      <div>
+
+                      <div className="favName">
                         <p> {event.name}</p>
                       </div>
                     </div>

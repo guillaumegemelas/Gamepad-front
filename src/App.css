@@ -604,6 +604,19 @@ a {
   display: flex;
   background-color: #1f2024;
 }
+.favImg img {
+  position: absolute;
+}
+.favImg button {
+  position: relative;
+}
+.favImg button:hover {
+  color: #9d5b64;
+}
+.favName {
+  position: relative;
+  margin-top: 330px;
+}
 
 .favPage img {
   width: 250px;
@@ -628,6 +641,8 @@ a {
   background-color: #1f2024;
 }
 .favPage {
+  display: flex;
+  flex-direction: column;
   margin-right: 25px;
   width: 250px;
   height: 400px;
@@ -639,6 +654,17 @@ a {
 }
 .favName {
   width: 250px;
+}
+.favPage button {
+  color: rgb(184, 180, 180);
+  width: 60px;
+  height: 30px;
+  border-radius: 5px;
+  font-family: "Georama", sans-serif;
+  font-size: 18px;
+  background-color: #3f414a;
+  border: none;
+  border-bottom: 1px solid rgb(147, 59, 69);
 }
 .favTitle {
   display: flex;
