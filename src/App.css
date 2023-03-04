@@ -591,12 +591,11 @@ a {
   flex-direction: column;
   padding-top: 80px;
   width: 1100px;
-  min-height: 100vh;
+  min-height: 100%;
   margin: 0 auto;
   background-color: #1f2024;
 }
 .totFav {
-  height: 100%;
   width: 100%;
   background-color: #1f2024;
 }
@@ -626,17 +625,20 @@ a {
   flex-wrap: wrap;
   margin: 0 auto;
   width: 1100px;
-  height: 100vh;
   background-color: #1f2024;
 }
 .favPage {
   margin-right: 25px;
+  width: 250px;
   height: 400px;
   background-color: #1f2024;
 }
 .favPage p {
   color: white;
   font-size: 18px;
+}
+.favName {
+  width: 250px;
 }
 .favTitle {
   display: flex;
@@ -661,4 +663,82 @@ a {
 
 .favTitle button:hover {
   color: #21a1b3;
+}
+
+/* Page Review ---------------------------------------------------------- */
+
+.mainReview {
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #1f2024;
+}
+.boxReview {
+  width: 750px;
+  height: 400px;
+  background-color: #3a3b42;
+  border-radius: 7px;
+  padding: 15px 33px 0 20px;
+  margin: 0 auto;
+  margin-top: 200px;
+  color: white;
+}
+.boxReview h1 {
+  font-size: 25px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #21a1b3;
+}
+.boxReview p {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.boxReview1 {
+  margin-bottom: 40px;
+}
+
+.boxReview textarea {
+  width: 100%;
+  border-radius: 7px;
+  font-size: 15px;
+  color: #1f2024;
+  background-color: lightgray;
+  font-family: "Georama", sans-serif;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+.boxReview1 textarea {
+  height: 25px;
+}
+.butReview button {
+  color: #1f2024;
+  width: 120px;
+  height: 30px;
+  border-radius: 5px;
+  font-family: "Georama", sans-serif;
+  font-size: 18px;
+  background-color: #21a1b3;
+  border: none;
+  border-bottom: 1px solid #21a1b3;
+  margin-top: 15px;
+  margin-left: 643px;
+}
+.testreview {
+  display: flex;
+  justify-content: space-between;
+}
+.testreview button {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  font-family: "Georama", sans-serif;
+  font-size: 18px;
+  background-color: #3a3b42;
+  color: lightgray;
+  border: 1px solid #21a1b3;
+}
+.testreview button:hover {
+  color: #21a1b3;
+}
+.butReview button:hover {
+  color: rgb(103, 100, 100);
 }

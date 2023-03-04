@@ -9,10 +9,10 @@ import { useState } from "react";
 import Home from "./pages/Home";
 import Homepage from "./pages/Homepage";
 import Game from "./pages/Game";
-
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Favourites from "./pages/Favourites";
+import Review from "./pages/Review";
 
 //import des composants
 import Header from "./components/Header";
@@ -53,6 +53,7 @@ function App() {
             element={<Login handleToken={handleToken} />}
           />
           <Route path="/favourites" element={<Favourites token={token} />} />
+          <Route path="/reviews" element={<Review token={token} />} />
         </Routes>
 
         <Footer />

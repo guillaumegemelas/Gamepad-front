@@ -47,15 +47,22 @@ const Favourites = ({ token }) => {
 
           <div className="mapFav">
             {data.map((event, index) => {
-              //   if (event.token === token) {
+              //les fav s'entregistrent pour tout le mon de pareil!!!!!
+              console.log(token, "-----token connecté------");
+              console.log(event.token, "------tokenfavoris++++++++");
               return (
-                <div key={index} className="favPage">
-                  <div className="favImg">
-                    <img src={event.image} alt="favimg" />
-                  </div>
-                  <div>
-                    <p> {event.name}</p>
-                  </div>
+                <div>
+                  {" "}
+                  {token === event.token && (
+                    <div key={index} className="favPage">
+                      <div className="favImg">
+                        <img src={event.image} alt="favimg" />
+                      </div>
+                      <div>
+                        <p> {event.name}</p>
+                      </div>
+                    </div>
+                  )}
                 </div>
               );
               //   }

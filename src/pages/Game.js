@@ -2,12 +2,14 @@ import axios from "axios";
 
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 //import icones
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Game = ({ token }) => {
+  const navigate = useNavigate();
+
   const [gameCheck, setGameCheck] = useState({});
   //   bien mettre ("") pour éviter undefined à chargement page
   const [isLoading, setIsLoading] = useState();
@@ -146,7 +148,12 @@ const Game = ({ token }) => {
                     >
                       Save a collection <FontAwesomeIcon icon="inbox" />
                     </button>
-                    <button className="addBut">
+                    <button
+                      className="addBut"
+                      onClick={() => {
+                        navigate("/reviews");
+                      }}
+                    >
                       <p> Add a</p>
                       review <FontAwesomeIcon icon="message" />
                     </button>
@@ -256,6 +263,15 @@ const Game = ({ token }) => {
                 // fin response.data?-------------------------------------*/}
               )}
             </div>
+          </section>
+          {/* section qui regroupe les reviews-------------------------------- */}
+          <section>
+            <h1>Reviews</h1>
+            {/* avec nombre de reviews en lien avec le jeu */}
+            {/* si pas de reviews */}
+            <p>No Review for this game</p>
+            {/* si review: tab.length >0 alors affichage des reviews */}
+            {/* map sur les reviews (idem favoris) */}
           </section>
         </div>
       )}
