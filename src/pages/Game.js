@@ -116,11 +116,12 @@ const Game = ({ token }) => {
               <div>
                 {/* il faut envoyer en favoris au clique le nom et l'image du jeu */}
                 {/* le bouton n'apparait que si l'utilisateur est connecté */}
-                {token && (
-                  <div className="items">
-                    <button
-                      className="favBut"
-                      onClick={async () => {
+
+                <div className="items">
+                  <button
+                    className="favBut"
+                    onClick={async () => {
+                      if (token) {
                         try {
                           const response = await axios.post(
                             "http://localhost:3000/addfavourites",
@@ -144,21 +145,27 @@ const Game = ({ token }) => {
                             alert("Favourites already added");
                           }
                         }
-                      }}
-                    >
-                      Save a collection <FontAwesomeIcon icon="inbox" />
-                    </button>
-                    <button
-                      className="addBut"
-                      onClick={() => {
+                      } else {
+                        navigate("/user/login");
+                      }
+                    }}
+                  >
+                    Save a collection <FontAwesomeIcon icon="inbox" />
+                  </button>
+                  <button
+                    className="addBut"
+                    onClick={() => {
+                      if (token) {
                         navigate("/reviews");
-                      }}
-                    >
-                      <p> Add a</p>
-                      review <FontAwesomeIcon icon="message" />
-                    </button>
-                  </div>
-                )}
+                      } else {
+                        navigate("/user/login");
+                      }
+                    }}
+                  >
+                    <p> Add a</p>
+                    review <FontAwesomeIcon icon="message" />
+                  </button>
+                </div>
               </div>
               <div className="plateformBlock">
                 <div className="columnOne">
