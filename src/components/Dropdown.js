@@ -4,7 +4,7 @@ const Dropdown = ({ label, value, options, onChange }) => {
       {label}
       <select className="dropSelect" value={value} onChange={onChange}>
         {options.map((option, index) => (
-          <option classeName="dropOption" key={index} value={option.value}>
+          <option className="dropOption" key={index} value={option.value}>
             {option.label}
           </option>
         ))}
