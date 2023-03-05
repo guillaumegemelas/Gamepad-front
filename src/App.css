@@ -28,6 +28,28 @@
   /* height: 50px; */
   margin-left: 50px;
 }
+.connectButons1 {
+  display: flex;
+  width: auto;
+  padding-right: 20px;
+}
+.connectUser {
+  display: flex;
+}
+.connectUser p {
+  color: #21a1b3;
+  font-family: "Georama", sans-serif;
+  font-size: 19px;
+  margin-right: 45px;
+  margin-top: 5px;
+}
+.connectUser span {
+  color: #21a1b3;
+  font-family: "Georama", sans-serif;
+  font-size: 19px;
+  margin-right: 25px;
+  margin-top: 5px;
+}
 .connectButons,
 .connectButons1 {
   padding-right: 40px;
@@ -84,10 +106,16 @@
   padding-top: 80px;
   object-fit: contain;
 }
-.HomeFirst p {
+/* .HomeFirst p {
   margin-top: 180px;
   margin-left: 120px;
   font-size: 25px;
+  color: #1f2024;
+} */
+.HomeFirst .icon {
+  margin-top: 180px;
+  margin-left: 120px;
+  font-size: 60px;
   color: #1f2024;
 }
 a {
@@ -104,8 +132,7 @@ a {
   background-color: none;
   box-shadow: 1px 1px 15px rgb(69, 68, 68);
 }
-.buttonHome p:hover {
-  box-shadow: 1px 1px 15px rgb(147, 59, 69);
+.buttonHome .icon:hover {
   color: rgb(147, 59, 69);
 }
 

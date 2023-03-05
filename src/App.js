@@ -25,9 +25,20 @@ import {
   faInbox,
   faHouse,
   faTrashCan,
+  faRightToBracket,
+  faDoorOpen,
+  faFaceGrinWide,
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faMessage, faInbox, faHouse, faTrashCan);
+library.add(
+  faMessage,
+  faInbox,
+  faHouse,
+  faTrashCan,
+  faRightToBracket,
+  faDoorOpen,
+  faFaceGrinWide
+);
 
 function App() {
   const [token, setToken] = useState(Cookies.get("token") || null);
