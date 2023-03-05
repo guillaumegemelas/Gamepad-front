@@ -69,7 +69,7 @@ function App() {
             element={<Login handleToken={handleToken} />}
           />
           <Route path="/favourites" element={<Favourites token={token} />} />
-          <Route path="/reviews" element={<Review token={token} />} />
+          <Route path="/reviews/:name" element={<Review token={token} />} />
         </Routes>
 
         <Footer />

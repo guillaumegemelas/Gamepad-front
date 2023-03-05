@@ -152,19 +152,27 @@ const Game = ({ token }) => {
                   >
                     Save a collection <FontAwesomeIcon icon="inbox" />
                   </button>
-                  <button
-                    className="addBut"
-                    onClick={() => {
-                      if (token) {
-                        navigate("/reviews");
-                      } else {
-                        navigate("/user/login");
-                      }
-                    }}
-                  >
-                    <p> Add a</p>
-                    review <FontAwesomeIcon icon="message" />
-                  </button>
+
+                  {/* il va falloir envoyer par link par exemple l'id du jeu sur la page review, que l'on pourra envoyer à son tour 
+                    lors de n'envoi en base de données, comme cela on pourra récupérer l'id avec une requete sur la page game pour 
+                    afficher la review du jeu avec un .map avec comme selecteur l'id du jeu (idem favoris*/}
+
+                  {/* response.data.id  ou {gameCheck.id}*/}
+                  <div>
+                    {token && (
+                      <Link
+                        key={gameCheck.id}
+                        className="reviewLink"
+                        to={`/reviews/${gameCheck.name}`}
+                      >
+                        <button className="addBut">
+                          <p> Add a</p>
+                          review <FontAwesomeIcon icon="message" />
+                        </button>
+                      </Link>
+                    )}
+                  </div>
+                  {/* fin test link de add review--------------------- */}
                 </div>
               </div>
               <div className="plateformBlock">
