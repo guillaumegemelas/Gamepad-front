@@ -307,7 +307,7 @@ a {
 .gameResult {
   margin: 0 auto;
   width: 1300px;
-  min-height: 1300px;
+  min-height: 1500px;
   background-color: #1f2024;
   color: #fff;
 }
@@ -855,4 +855,254 @@ a {
 }
 .butReview button:hover {
   color: rgb(103, 100, 100);
+}
+
+/* Partie RESPONSIVE================================================================== */
+/* ==============1150px==============================================================*/
+@media (max-width: 1150px) {
+  .header {
+    /* background-color: #fff; */
+  }
+  .gamesResult {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    max-width: 100vw;
+    height: auto;
+    /* background-color: #1f2024; */
+    /* border: 2px solid black; */
+    padding-bottom: 50px;
+  }
+  .homeh1 h1 {
+    color: white;
+    font-size: 25px;
+    margin-left: 30px;
+  }
+  /* test */
+  .gameResult {
+    margin: 0 auto;
+    width: 100vw;
+    min-height: auto;
+    background-color: #1f2024;
+    color: #fff;
+  }
+  .gameResult > h1 {
+    font-size: 28px;
+    text-decoration: underline #21a1b3;
+    padding-top: 90px;
+    margin-bottom: 35px;
+    margin-left: 20px;
+  }
+
+  .firstGameSection {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .firstColumn img {
+    width: 90vw;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-left: 20px;
+  }
+  .gamesPickUp {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 90vw;
+    height: auto;
+    background-color: #1f2024;
+    /* border: 2px solid black; */
+    padding-bottom: 20px;
+  }
+  .similarGames > h1 {
+    font-size: 28px;
+    text-decoration: underline #21a1b3;
+    padding-top: 90px;
+    margin-bottom: 35px;
+    margin-left: 20px;
+    font-size: 23px;
+  }
+  .reviewBox {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    margin: 0 auto;
+    min-height: 130px;
+    /* border: 1px red solid; */
+    background-color: rgb(69, 68, 68);
+    border-radius: 5px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    border-bottom: #21a1b3 1px solid;
+  }
+  .mainReview {
+    display: flex;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #1f2024;
+  }
+  .boxReview {
+    width: 80vw;
+    height: 400px;
+    background-color: #3a3b42;
+    border-radius: 7px;
+    padding: 15px 33px 0 20px;
+    margin: 0 auto;
+    margin-top: 200px;
+    color: white;
+  }
+  .butReview button {
+    color: #1f2024;
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    font-family: "Georama", sans-serif;
+    font-size: 18px;
+    background-color: #21a1b3;
+    border: none;
+    border-bottom: 1px solid #21a1b3;
+    margin-top: 15px;
+    margin-left: 60vw;
+  }
+  .favGlobPage {
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    width: 90vw;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: #1f2024;
+  }
+  .mapFav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    width: 90vw;
+    background-color: #1f2024;
+  }
+}
+
+/*==========630px======================*/
+
+@media (max-width: 630px) {
+  .header {
+    /* background-color: yellow; */
+  }
+  .logo img {
+    width: 100px;
+    height: 60px;
+    object-fit: cover;
+    /* height: 50px; */
+    margin-left: 20px;
+  }
+  .HomeFirst .icon {
+    margin-top: 100px;
+    margin-left: 10px;
+    font-size: 30px;
+    color: #1f2024;
+  }
+  .connectButons1 {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    padding-right: 20px;
+  }
+  .connectButons1 button {
+    height: 30px;
+    background-color: #1f2024;
+    font-family: "Georama", sans-serif;
+    font-size: 12px;
+    color: rgb(184, 180, 180);
+    border: none;
+  }
+
+  .connectButons button {
+    height: 30px;
+    width: 100px;
+    background-color: #1f2024;
+    font-family: "Georama", sans-serif;
+    font-size: 12px;
+    color: rgb(184, 180, 180);
+    border: none;
+    /* border-bottom: 1px solid #21a1b3; */
+  }
+  .connectUser p {
+    color: #21a1b3;
+    font-family: "Georama", sans-serif;
+    font-size: 12px;
+    margin-right: 45px;
+    margin-top: 5px;
+  }
+  .connectUser span {
+    color: #21a1b3;
+    font-family: "Georama", sans-serif;
+    font-size: 12px;
+    margin-right: 25px;
+    margin-top: 5px;
+  }
+  .firstColumn img {
+    width: 90vw;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-bottom: 30px;
+  }
+  .secondColumn {
+    width: 90vw;
+  }
+  .gamesPickUp {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 90vw;
+    height: auto;
+    background-color: #1f2024;
+    /* border: 2px solid black; */
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+  }
+  .reviewBox {
+    display: flex;
+    flex-direction: column;
+    width: 85vw;
+    margin: 0 auto;
+    min-height: 130px;
+    /* border: 1px red solid; */
+    background-color: rgb(69, 68, 68);
+    border-radius: 5px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    border-bottom: #21a1b3 1px solid;
+  }
+  .boxReview {
+    width: 70vw;
+    height: 440px;
+    background-color: #3a3b42;
+    border-radius: 7px;
+    padding: 15px 33px 0 20px;
+    margin: 0 auto;
+    margin-top: 200px;
+    color: white;
+  }
+  .butReview button {
+    color: #1f2024;
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    font-family: "Georama", sans-serif;
+    font-size: 18px;
+    background-color: #21a1b3;
+    border: none;
+    border-bottom: 1px solid #21a1b3;
+    margin-top: 15px;
+    margin-left: 25vw;
+  }
+  .connectUser {
+    display: none;
+  }
 }
