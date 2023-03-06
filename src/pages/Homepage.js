@@ -2,6 +2,7 @@ import axios from "axios";
 // import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import GameCard from "../components/GameCard";
+// import { Navigate } from "react-router-dom";
 
 //import du sélecteur
 import Dropdown from "../components/Dropdown";
@@ -30,7 +31,7 @@ const Homepage = () => {
 
   //++test select by platform++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-  const [platforms, setPlatforms] = useState();
+  const [platforms, setPlatforms] = useState("");
 
   const optionsPlf = [
     { label: "Default", value: "" },
@@ -47,7 +48,7 @@ const Homepage = () => {
 
   //++test select by genre++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-  const [genres, setGenres] = useState();
+  const [genres, setGenres] = useState("");
 
   const optionsGen = [
     { label: "Default", value: "" },
@@ -213,9 +214,11 @@ const Homepage = () => {
               <div className="filter2">
                 <button
                   onClick={() => {
-                    setValue("");
-                    setPlatforms();
-                    setGenres();
+                    // setValue("");
+                    // setPlatforms("");
+                    // setGenres("");
+                    // pour refresh la page et mettre les states à default: méthode à défaut de mieux
+                    window.location.reload();
                   }}
                 >
                   <p>reset filters</p>
@@ -233,7 +236,7 @@ const Homepage = () => {
             <input
               type="number"
               min="1"
-              max="25"
+              max="30"
               value={page}
               placeholder="page"
               onChange={(event) => setPage(event.target.value)}

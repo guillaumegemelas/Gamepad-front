@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link, useNavigate } from "react-router-dom";
 
-import Counter from "../components/Counter";
+// import Counter from "../components/Counter";
 
 //test carousel photos page home----------------------------------------------------
 // import { Carousel } from "react-responsive-carousel";
@@ -44,7 +44,7 @@ const Game = ({ token }) => {
   const [userReview, setUserReview] = useState([]);
 
   //-compteur pour noter les reviews*-******************************-*******************
-  const [counter, setCounter] = useState(0);
+  // const [counter, setCounter] = useState(0);
   //----------------------------------------------------------------------------------
 
   useEffect(() => {
@@ -367,12 +367,16 @@ const Game = ({ token }) => {
 
                           <p>{item.description}</p>
                           <div>
-                            <Counter counter={counter} setCounter={setCounter}>
+                            {/* <Counter
+                              key={index}
+                              counter={counter}
+                              setCounter={setCounter}
+                            >
                               <div className="counter">
                                 <FontAwesomeIcon icon="thumbs-up" />
                               </div>
                             </Counter>
-                            <p>{counter}</p>
+                            <p>{counter}</p> */}
                           </div>
                         </div>
                       </div>
