@@ -474,6 +474,7 @@ a {
   border-radius: 5px;
   margin-top: 25px;
   margin-bottom: 20px;
+  border-bottom: #21a1b3 1px solid;
 }
 .toColumnh1 > h1 {
   font-size: 20px;
@@ -512,6 +513,11 @@ a {
   color: #21a1b3;
   /* background-color: #fff; */
   /* padding-bottom: 10px; */
+}
+
+.counter {
+  width: 100px;
+  height: 30px;
 }
 
 /* Footer--------------------------------------------- */

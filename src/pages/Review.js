@@ -62,6 +62,9 @@ const Review = ({ token }) => {
       navigate("/games");
     } catch (error) {
       console.log(error.message, "erreur 🖤 ");
+      if (error.message === "Request failed with status code 409") {
+        alert("you have already added a review for this game");
+      }
     }
   };
 

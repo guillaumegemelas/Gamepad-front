@@ -4,6 +4,14 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link, useNavigate } from "react-router-dom";
 
+import Counter from "../components/Counter";
+
+//test carousel photos page home----------------------------------------------------
+// import { Carousel } from "react-responsive-carousel";
+// import "react-responsive-carousel/lib/styles/carousel.min.css";
+//mais que 2 images présentes et pas en très bonne qualité
+//---------------------------------------------------------------------------------
+
 //import icones
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -29,12 +37,15 @@ const Game = ({ token }) => {
   //   recupération de l'id?
   const { id } = useParams();
 
-  //test pour récupérer les reviews selon le jeu-------
+  //test pour récupérer les reviews selon le jeu
   const [reviews, setReviews] = useState([]);
 
-  //test requete user pour review------------------------******************************
+  //test requete user pour review
   const [userReview, setUserReview] = useState([]);
-  //-******************************-******************************-*******************
+
+  //-compteur pour noter les reviews*-******************************-*******************
+  const [counter, setCounter] = useState(0);
+  //----------------------------------------------------------------------------------
 
   useEffect(() => {
     const fetchData = async () => {
@@ -151,7 +162,9 @@ const Game = ({ token }) => {
           {/* pas besoin de map dans ce cas la */}
           <section className="firstGameSection">
             <div className="firstColumn">
+              {/* <Carousel> */}
               <img src={gameCheck.background_image} alt="game pic" />
+              {/* </Carousel> */}
             </div>
             <div className="secondColumn">
               <div>
@@ -334,13 +347,16 @@ const Game = ({ token }) => {
                             <div className="toColumnh1">
                               <h1>{item.title}</h1>
                             </div>
-                            <div>
+                            <div className="toColumnUser">
                               {userReview.map((event, index) => {
                                 return (
                                   <div key={index} className="reviewBox1">
                                     {item.token === event.token && (
                                       <div>
-                                        <p>{event.username}</p>
+                                        <p>
+                                          {event.username}{" "}
+                                          <FontAwesomeIcon icon="comment-dots" />
+                                        </p>
                                       </div>
                                     )}
                                   </div>
@@ -350,6 +366,14 @@ const Game = ({ token }) => {
                           </div>
 
                           <p>{item.description}</p>
+                          <div>
+                            <Counter counter={counter} setCounter={setCounter}>
+                              <div className="counter">
+                                <FontAwesomeIcon icon="thumbs-up" />
+                              </div>
+                            </Counter>
+                            <p>{counter}</p>
+                          </div>
                         </div>
                       </div>
                     )}

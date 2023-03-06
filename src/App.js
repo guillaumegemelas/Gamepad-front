@@ -28,6 +28,8 @@ import {
   faRightToBracket,
   faDoorOpen,
   faFaceGrinWide,
+  faCommentDots,
+  faThumbsUp,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -37,7 +39,9 @@ library.add(
   faTrashCan,
   faRightToBracket,
   faDoorOpen,
-  faFaceGrinWide
+  faFaceGrinWide,
+  faCommentDots,
+  faThumbsUp
 );
 
 function App() {
