@@ -26,11 +26,12 @@ const Game = ({ token }) => {
   // const [gameSameType, setGameSameType] = useState("");
   const [gameSameType2, setGameSameType2] = useState([]);
 
-  // const randomNumber = Math.floor(Math.random() * (20000 - 1)) + 1;
-  // console.log(randomNumber);
-
   //   recupération de l'id?
   const { id } = useParams();
+
+  //test pour récupérer les reviews selon le jeu-------
+  const [reviews, setReviews] = useState([]);
+  //---------------------------------------------------
 
   useEffect(() => {
     const fetchData = async () => {
@@ -96,7 +97,27 @@ const Game = ({ token }) => {
     fetchGame();
   }, [search]);
 
-  //test seconde requete pour ajouter 5 jeux du même genre----------------------------
+  //test troisième requete pour récupérer les reviews du jeu----------------------------
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        const response = await axios.get(
+          // requete vers le back fonctionne!!!! plus besoin de clé Api et requete vers serveur local et plus tard northflank
+          `http://localhost:3000/review`
+        );
+        setReviews(response.data.reviews);
+        console.log(response.data, "************data reviews******");
+
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error.message);
+        console.log(error.response);
+      }
+    };
+    fetchReviews();
+  }, []);
+
+  //----------------------------------------------------------------------------
 
   return (
     <div className="gamePage">
@@ -280,11 +301,27 @@ const Game = ({ token }) => {
             </div>
           </section>
           {/* section qui regroupe les reviews-------------------------------- */}
-          <section>
+          <section className="reviewSection">
             <h1>Reviews</h1>
+
+            <div>
+              {reviews.map((item, index) => {
+                return (
+                  <div>
+                    {item.name === gameCheck.name && (
+                      <div className="reviewBox" key={index}>
+                        <h1>{item.title}</h1>
+                        <p>{item.description}</p>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+
             {/* avec nombre de reviews en lien avec le jeu */}
             {/* si pas de reviews */}
-            <p>No Review for this game</p>
+
             {/* si review: tab.length >0 alors affichage des reviews */}
             {/* map sur les reviews (idem favoris) */}
           </section>
