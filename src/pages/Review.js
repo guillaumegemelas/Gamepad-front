@@ -1,5 +1,8 @@
 import axios from "axios";
-import { useState } from "react";
+import {
+  useState,
+  // useEffect
+} from "react";
 // import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -17,6 +20,33 @@ const Review = ({ token }) => {
   const { name } = useParams();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+
+  //test requete user pour review------------------------******************************
+  //   const [userReview, setUserReview] = useState([]);
+  //   const [isLoading, setIsLoading] = useState();
+  //   const [userPickUp, setUserPickUp] = useState("");
+  //-*******************************************************************************
+
+  //Quatrième requete pour récup user avec review--************************************************************
+  //   useEffect(() => {
+  //     const fetchUser = async () => {
+  //       try {
+  //         const response = await axios.get("http://localhost:3000/user");
+  //         setUserReview(response.data.users);
+  //         setIsLoading(false);
+  //         console.log(
+  //           response.data.users,
+  //           "response get user---sur review----------------"
+  //         );
+  //       } catch (error) {
+  //         console.log(error.message);
+  //         console.log(error.response);
+  //       }
+  //     };
+  //     fetchUser();
+  //   }, []);
+
+  //-******************************-******************************-******************************
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -52,6 +82,21 @@ const Review = ({ token }) => {
             X
           </button>
         </div>
+        {/* <div>
+          {userReview.map((event, index) => {
+            console.log(event.username);
+            if (token === event.token) {
+              console.log(event.token);
+                setUserPickUp(event.username);
+            }
+            return (
+              <div key={index}>
+                {token === event.token &&
+                  console.log(event.username, "---------userpickup-------")}
+              </div>
+            );
+          })}
+        </div> */}
         <form className="reviewForm" onSubmit={handleSubmit}>
           <div className="boxReview1">
             <p>Review Title</p>
@@ -80,10 +125,6 @@ const Review = ({ token }) => {
 
           <div className="butReview">
             <button
-            //il faut envoyer
-            //title
-            //description
-            //token
             //name du jeu récupéré plus haut (au lieu de l'id qui semblait compliqué à envoyer avec mongodb
             //qui donne une id propre à une review et pas à une review d'un jeu)
             >

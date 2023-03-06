@@ -31,7 +31,10 @@ const Game = ({ token }) => {
 
   //test pour récupérer les reviews selon le jeu-------
   const [reviews, setReviews] = useState([]);
-  //---------------------------------------------------
+
+  //test requete user pour review------------------------******************************
+  const [userReview, setUserReview] = useState([]);
+  //-******************************-******************************-*******************
 
   useEffect(() => {
     const fetchData = async () => {
@@ -85,8 +88,6 @@ const Game = ({ token }) => {
         );
         setGameSameType2(response.data.results);
         // console.log(response.data.results, "************data.results******");
-        // console.log(gameSameType, "second requete------+ + + + +----");
-        // console.log(response.data, "reponse data game Type");
 
         setIsLoading(false);
       } catch (error) {
@@ -117,7 +118,26 @@ const Game = ({ token }) => {
     fetchReviews();
   }, []);
 
-  //----------------------------------------------------------------------------
+  //Quatrième requete pour récup user avec review--******************************-******************************
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/user");
+        setUserReview(response.data.users);
+        setIsLoading(false);
+        console.log(
+          response.data.users,
+          "response get user---sur review----------------"
+        );
+      } catch (error) {
+        console.log(error.message);
+        console.log(error.response);
+      }
+    };
+    fetchUser();
+  }, []);
+
+  //-******************************-******************************-******************************
 
   return (
     <div className="gamePage">
@@ -303,15 +323,34 @@ const Game = ({ token }) => {
           {/* section qui regroupe les reviews-------------------------------- */}
           <section className="reviewSection">
             <h1>Reviews</h1>
-
-            <div>
+            <div className="reviewSection1">
               {reviews.map((item, index) => {
                 return (
-                  <div>
+                  <div key={index}>
                     {item.name === gameCheck.name && (
-                      <div className="reviewBox" key={index}>
-                        <h1>{item.title}</h1>
-                        <p>{item.description}</p>
+                      <div>
+                        <div className="reviewBox">
+                          <div className="toColumn">
+                            <div className="toColumnh1">
+                              <h1>{item.title}</h1>
+                            </div>
+                            <div>
+                              {userReview.map((event, index) => {
+                                return (
+                                  <div key={index} className="reviewBox1">
+                                    {item.token === event.token && (
+                                      <div>
+                                        <p>{event.username}</p>
+                                      </div>
+                                    )}
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </div>
+
+                          <p>{item.description}</p>
+                        </div>
                       </div>
                     )}
                   </div>

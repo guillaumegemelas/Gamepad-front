@@ -464,27 +464,36 @@ a {
 /*partie review page game-----------------------------*/
 
 .reviewBox {
+  display: flex;
+  flex-direction: column;
   width: 800px;
   margin: 0 auto;
-  height: 150px;
+  min-height: 130px;
   /* border: 1px red solid; */
   background-color: rgb(69, 68, 68);
   border-radius: 5px;
-  margin-bottom: 30px;
   margin-top: 25px;
+  margin-bottom: 20px;
 }
-.reviewBox > h1 {
+.toColumnh1 > h1 {
   font-size: 20px;
   text-decoration: underline;
-  padding-top: 10px;
   margin-left: 15px;
   margin-bottom: 20px;
 }
+.toColumn {
+  margin-top: 15px;
+}
+
 .reviewBox > p {
   font-size: 15px;
   margin-right: 15px;
   margin-left: 15px;
   margin-bottom: 20px;
+}
+.toColumn {
+  display: flex;
+  justify-content: space-between;
 }
 .reviewSection {
   display: flex;
@@ -495,6 +504,14 @@ a {
   text-decoration: underline #21a1b3;
   margin-bottom: 5px;
   margin: 0 auto;
+}
+.reviewBox1 {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+  color: #21a1b3;
+  /* background-color: #fff; */
+  /* padding-bottom: 10px; */
 }
 
 /* Footer--------------------------------------------- */
