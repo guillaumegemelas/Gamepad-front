@@ -125,7 +125,7 @@ const Game = ({ token }) => {
       }
     };
     fetchReviews();
-  }, []);
+  }, [token]);
 
   //Quatrième requete pour récup user avec review--******************************-******************************
   useEffect(() => {
@@ -177,7 +177,11 @@ const Game = ({ token }) => {
                         try {
                           const response = await axios.post(
                             "http://localhost:3000/addfavourites",
+
                             {
+                              // headers: {
+                              //   Authorization: `Bearer ${token}`,
+                              // },
                               name: gameCheck.name,
                               //vérifier le chemib de l'img, pas sur de mon coup
                               image: gameCheck.background_image,

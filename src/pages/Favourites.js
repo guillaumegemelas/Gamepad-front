@@ -15,7 +15,12 @@ const Favourites = ({ token }) => {
   useEffect(() => {
     const fetchFavourites = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/favourites");
+        const response = await axios.get("http://localhost:3000/favourites", {
+          //ajout bearer token pour authentification avecmiddleware
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
         setData(response.data.favourites);
         setIsLoading(false);
         console.log(response.data);
@@ -25,7 +30,7 @@ const Favourites = ({ token }) => {
       }
     };
     fetchFavourites();
-  }, []);
+  }, [token]);
 
   return (
     <div className="totFav">
