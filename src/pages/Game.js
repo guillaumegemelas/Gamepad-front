@@ -125,7 +125,7 @@ const Game = ({ token }) => {
       }
     };
     fetchReviews();
-  }, [token]);
+  }, []);
 
   //Quatrième requete pour récup user avec review--******************************-******************************
   useEffect(() => {
@@ -179,14 +179,16 @@ const Game = ({ token }) => {
                             "http://localhost:3000/addfavourites",
 
                             {
-                              // headers: {
-                              //   Authorization: `Bearer ${token}`,
-                              // },
                               name: gameCheck.name,
                               //vérifier le chemib de l'img, pas sur de mon coup
                               image: gameCheck.background_image,
                               //test envoi token
                               token: token,
+                            },
+                            {
+                              headers: {
+                                Authorization: `Bearer ${token}`,
+                              },
                             }
                           );
                           alert("Added to Favourites");
@@ -375,6 +377,7 @@ const Game = ({ token }) => {
                               count={item.count}
                               id={item._id}
                               setReviews={setReviews}
+                              token={token}
                             />
                           </div>
                         </div>

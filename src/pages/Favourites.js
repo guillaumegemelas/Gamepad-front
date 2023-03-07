@@ -71,7 +71,12 @@ const Favourites = ({ token }) => {
                           onClick={async () => {
                             try {
                               const response = await axios.delete(
-                                `http://localhost:3000/favourites/delete/${event._id}`
+                                `http://localhost:3000/favourites/delete/${event._id}`,
+                                {
+                                  headers: {
+                                    Authorization: `Bearer ${token}`,
+                                  },
+                                }
                               );
                               setData(response.data.favourites);
                               console.log(response.data.favourites);

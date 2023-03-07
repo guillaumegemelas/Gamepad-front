@@ -24,12 +24,20 @@ const Review = ({ token }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3000/addreview", {
-        name: name,
-        title: title,
-        description: description,
-        token: token,
-      });
+      const response = await axios.post(
+        "http://localhost:3000/addreview",
+        {
+          name: name,
+          title: title,
+          description: description,
+          token: token,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       console.log(response);
       alert("votre commentaire a été publié");
       navigate("/games");
