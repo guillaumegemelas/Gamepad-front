@@ -40,6 +40,7 @@ const Game = ({ token }) => {
 
   //test pour récupérer les reviews selon le jeu
   const [reviews, setReviews] = useState([]);
+  // const [counter, setCounter] = useState();
 
   //test requete user pour review
   const [userReview, setUserReview] = useState([]);
@@ -363,8 +364,10 @@ const Game = ({ token }) => {
                           </div>
 
                           <p>{item.description}</p>
+                          {/* <p>{item.count}</p> */}
+                          {/* <p>{item._id}</p> */}
                           <div>
-                            <Counter gameCheck={gameCheck} />
+                            <Counter count={item.count} id={item._id} />
                           </div>
                         </div>
                       </div>
