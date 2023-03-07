@@ -367,7 +367,11 @@ const Game = ({ token }) => {
                           {/* <p>{item.count}</p> */}
                           {/* <p>{item._id}</p> */}
                           <div>
-                            <Counter count={item.count} id={item._id} />
+                            <Counter
+                              count={item.count}
+                              id={item._id}
+                              setReviews={setReviews}
+                            />
                           </div>
                         </div>
                       </div>
