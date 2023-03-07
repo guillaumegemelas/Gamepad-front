@@ -364,7 +364,7 @@ const Game = ({ token }) => {
 
                           <p>{item.description}</p>
                           <div>
-                            <Counter />
+                            <Counter gameCheck={gameCheck} />
                           </div>
                         </div>
                       </div>
