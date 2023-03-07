@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link, useNavigate } from "react-router-dom";
 
-// import Counter from "../components/Counter";
+import Counter from "../components/Counter";
 
 //test carousel photos page home----------------------------------------------------
 // import { Carousel } from "react-responsive-carousel";
@@ -14,6 +14,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 //import icones
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { counter } from "@fortawesome/fontawesome-svg-core";
 
 const Game = ({ token }) => {
   const navigate = useNavigate();
@@ -42,10 +43,6 @@ const Game = ({ token }) => {
 
   //test requete user pour review
   const [userReview, setUserReview] = useState([]);
-
-  //-compteur pour noter les reviews*-******************************-*******************
-  const [counter, setCounter] = useState(0);
-  //----------------------------------------------------------------------------------
 
   useEffect(() => {
     const fetchData = async () => {
@@ -338,9 +335,6 @@ const Game = ({ token }) => {
             <h1>Reviews</h1>
             <div className="reviewSection1">
               {reviews.map((item) => {
-                // test counter
-                // let counter = 0;
-                //
                 return (
                   <div key={item._id}>
                     {item.name === gameCheck.name && (
@@ -350,23 +344,6 @@ const Game = ({ token }) => {
                             <div className="toColumnh1">
                               <h1>{item.title}</h1>
                             </div>
-                            <button
-                              onClick={() => {
-                                console.log("jai cliqué sur le bouton");
-                                setCounter(counter + 1);
-                              }}
-                            >
-                              +
-                            </button>
-                            {/* <button
-                              style={{ width: 20, height: 20 }}
-                              onClick={() => {
-                                counter += 1;
-                              }}
-                            >
-                              +
-                            </button> */}
-                            <p>{counter}</p>
                             <div className="toColumnUser">
                               {userReview.map((event, index) => {
                                 return (
@@ -387,16 +364,7 @@ const Game = ({ token }) => {
 
                           <p>{item.description}</p>
                           <div>
-                            {/* <Counter
-                              key={index}
-                              counter={counter}
-                              setCounter={setCounter}
-                            >
-                              <div className="counter">
-                                <FontAwesomeIcon icon="thumbs-up" />
-                              </div>
-                            </Counter>
-                            <p>{counter}</p> */}
+                            <Counter />
                           </div>
                         </div>
                       </div>

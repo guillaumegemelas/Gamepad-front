@@ -856,6 +856,34 @@ a {
 .butReview button:hover {
   color: rgb(103, 100, 100);
 }
+.reviewCounter {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 5px;
+  width: 100px;
+  margin-left: 80%;
+}
+.reviewCounter button {
+  background: none;
+  border: none;
+}
+.but1Review,
+.but2Review {
+  font-size: 20px;
+}
+.but1Review {
+  color: #73d963;
+}
+.green {
+  color: #73d963;
+}
+.red {
+  color: #ff4655;
+}
+.but2Review {
+  color: #ff4655;
+}
 
 /* Partie RESPONSIVE================================================================== */
 /* ==============1150px==============================================================*/

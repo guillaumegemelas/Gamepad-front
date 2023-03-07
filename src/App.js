@@ -30,6 +30,7 @@ import {
   faFaceGrinWide,
   faCommentDots,
   faThumbsUp,
+  faThumbsDown,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -41,7 +42,8 @@ library.add(
   faDoorOpen,
   faFaceGrinWide,
   faCommentDots,
-  faThumbsUp
+  faThumbsUp,
+  faThumbsDown
 );
 
 function App() {
