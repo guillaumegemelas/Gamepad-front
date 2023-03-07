@@ -860,9 +860,9 @@ a {
 /* Partie RESPONSIVE================================================================== */
 /* ==============1150px==============================================================*/
 @media (max-width: 1150px) {
-  .header {
-    /* background-color: #fff; */
-  }
+  /* .header {
+    background-color: #fff;
+  } */
   .gamesResult {
     display: flex;
     justify-content: center;
@@ -989,9 +989,9 @@ a {
 /*==========630px======================*/
 
 @media (max-width: 630px) {
-  .header {
-    /* background-color: yellow; */
-  }
+  /* .header {
+    background-color: yellow;
+  } */
   .logo img {
     width: 100px;
     height: 60px;

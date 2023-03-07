@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 const GameCard = ({ games }) => {
   return (
     <div className="gamesResult">
-      {games.results.map((elem, index) => {
+      {games.results.map((elem) => {
         return (
-          <section key={index}>
+          <section key={elem.id}>
             <div>
               <Link className="gameCard" to={`/game/${elem.id}`}>
                 <div className="hoverCard">

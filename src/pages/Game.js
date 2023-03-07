@@ -44,7 +44,7 @@ const Game = ({ token }) => {
   const [userReview, setUserReview] = useState([]);
 
   //-compteur pour noter les reviews*-******************************-*******************
-  // const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(0);
   //----------------------------------------------------------------------------------
 
   useEffect(() => {
@@ -118,7 +118,7 @@ const Game = ({ token }) => {
           `http://localhost:3000/review`
         );
         setReviews(response.data.reviews);
-        console.log(response.data, "************data reviews******");
+        console.log(response.data.reviews, "************data reviews******");
 
         setIsLoading(false);
       } catch (error) {
@@ -337,9 +337,12 @@ const Game = ({ token }) => {
           <section className="reviewSection">
             <h1>Reviews</h1>
             <div className="reviewSection1">
-              {reviews.map((item, index) => {
+              {reviews.map((item) => {
+                // test counter
+                // let counter = 0;
+                //
                 return (
-                  <div key={index}>
+                  <div key={item._id}>
                     {item.name === gameCheck.name && (
                       <div>
                         <div className="reviewBox">
@@ -347,6 +350,23 @@ const Game = ({ token }) => {
                             <div className="toColumnh1">
                               <h1>{item.title}</h1>
                             </div>
+                            <button
+                              onClick={() => {
+                                console.log("jai cliqué sur le bouton");
+                                setCounter(counter + 1);
+                              }}
+                            >
+                              +
+                            </button>
+                            {/* <button
+                              style={{ width: 20, height: 20 }}
+                              onClick={() => {
+                                counter += 1;
+                              }}
+                            >
+                              +
+                            </button> */}
+                            <p>{counter}</p>
                             <div className="toColumnUser">
                               {userReview.map((event, index) => {
                                 return (
@@ -385,12 +405,6 @@ const Game = ({ token }) => {
                 );
               })}
             </div>
-
-            {/* avec nombre de reviews en lien avec le jeu */}
-            {/* si pas de reviews */}
-
-            {/* si review: tab.length >0 alors affichage des reviews */}
-            {/* map sur les reviews (idem favoris) */}
           </section>
         </div>
       )}
