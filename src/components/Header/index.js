@@ -70,9 +70,6 @@ const Header = ({ handleToken, token }) => {
                               <img src={item.picture.secure_url} alt="" />
                             </div>
 
-                            {/* <span>
-                              <FontAwesomeIcon icon="face-grin-wide" />
-                            </span> */}
                             <div>
                               <p>{item.username}</p>
                             </div>

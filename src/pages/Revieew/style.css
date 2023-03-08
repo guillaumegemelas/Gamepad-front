@@ -179,4 +179,12 @@
     margin-top: 15px;
     margin-left: 25vw;
   }
+  .reviewCounter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 5px;
+    width: 100px;
+    margin-left: 70%;
+  }
 }

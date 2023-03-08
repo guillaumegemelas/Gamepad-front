@@ -16,7 +16,7 @@ const Counter = ({ count, id, setReviews, token }) => {
   console.log(count, "log de count----------");
 
   return (
-    <div>
+    <div className="testreviewbox">
       {token && (
         <div className="reviewCounter">
           <button

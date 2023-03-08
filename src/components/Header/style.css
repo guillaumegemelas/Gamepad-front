@@ -124,6 +124,12 @@
     font-size: 12px;
     color: rgb(184, 180, 180);
     border: none;
+    /* border-left: 1px solid #21a1b3; */
+    text-align: left;
+    width: 90px;
+  }
+  .connectButons1 .but2 {
+    border-bottom: 1px solid #21a1b3;
   }
 
   .connectButons button {
