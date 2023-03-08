@@ -5,7 +5,7 @@ import "./style.css";
 
 // import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import GameCard from "../../components/GameCard";
+import GameCard from "../../components/Gamecard/GameCard";
 // import { Navigate } from "react-router-dom";
 
 //import du sélecteur

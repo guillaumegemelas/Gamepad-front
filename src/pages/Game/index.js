@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link, useNavigate } from "react-router-dom";
 
-import Counter from "../../components/Counter";
+import Counter from "../../components/Counter/Counter";
 
 //test carousel photos page home----------------------------------------------------
 // import { Carousel } from "react-responsive-carousel";
