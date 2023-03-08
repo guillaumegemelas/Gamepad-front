@@ -107,3 +107,28 @@
 .favTitle button:hover {
   color: #21a1b3;
 }
+
+/* ==============1150px==============================================================*/
+@media (max-width: 1150px) {
+  /* .header {
+    background-color: #fff;
+  } */
+
+  .favGlobPage {
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    width: 90vw;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: #1f2024;
+  }
+  .mapFav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    width: 90vw;
+    background-color: #1f2024;
+  }
+}

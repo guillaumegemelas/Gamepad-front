@@ -15,12 +15,7 @@
   padding-top: 80px;
   object-fit: contain;
 }
-/* .HomeFirst p {
-    margin-top: 180px;
-    margin-left: 120px;
-    font-size: 25px;
-    color: #1f2024;
-  } */
+
 .HomeFirst .icon {
   margin-top: 180px;
   margin-left: 120px;
@@ -43,4 +38,15 @@ a {
 }
 .buttonHome .icon:hover {
   color: rgb(147, 59, 69);
+}
+
+/*==========630px======================*/
+
+@media (max-width: 630px) {
+  .HomeFirst .icon {
+    margin-top: 100px;
+    margin-left: 10px;
+    font-size: 30px;
+    color: #1f2024;
+  }
 }

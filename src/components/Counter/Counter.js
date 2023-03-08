@@ -1,5 +1,8 @@
 import axios from "axios";
 
+//import style.css
+import "./style.css";
+
 //import icones
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
