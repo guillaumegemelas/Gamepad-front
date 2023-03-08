@@ -153,7 +153,22 @@ const Game = ({ token }) => {
         </div>
       ) : (
         <div className="gameResult">
-          <h1>{gameCheck.name}</h1>
+          <div className="test5">
+            <div>
+              <h1>{gameCheck.name}</h1>
+            </div>
+
+            <div>
+              <button
+                onClick={() => {
+                  navigate("/games");
+                }}
+              >
+                <FontAwesomeIcon icon="house" />
+              </button>
+            </div>
+          </div>
+
           {/* pas besoin de map dans ce cas la */}
           <section className="firstGameSection">
             <div className="firstColumn">
@@ -227,6 +242,7 @@ const Game = ({ token }) => {
                       </Link>
                     )}
                   </div>
+
                   {/* fin test link de add review--------------------- */}
                 </div>
               </div>

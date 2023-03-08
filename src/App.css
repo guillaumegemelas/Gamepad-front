@@ -317,11 +317,36 @@ a {
   background-color: #1f2024;
   color: #fff;
 }
-.gameResult > h1 {
+
+.test5 {
+  width: 95%;
+  /* background-color: pink; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.test5 h1 {
   font-size: 28px;
   text-decoration: underline #21a1b3;
   padding-top: 90px;
   margin-bottom: 35px;
+}
+.test5 button {
+  color: rgb(184, 180, 180);
+  width: 60px;
+  height: 30px;
+  border-radius: 5px;
+  font-family: "Georama", sans-serif;
+  font-size: 18px;
+  background-color: #3f414a;
+  border: none;
+  border-bottom: 1px solid #21a1b3;
+  margin-right: 25px;
+  margin-top: 60px;
+}
+
+.test5 button:hover {
+  color: #21a1b3;
 }
 
 .firstGameSection {
@@ -688,7 +713,7 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  height: 430px;
+  height: 470px;
   margin-top: 30px;
 }
 .formSign1 {
@@ -696,7 +721,7 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  height: 320px;
+  height: 330px;
   margin-top: 30px;
 }
 .formSign button,
@@ -743,6 +768,21 @@ a {
 .formSign p {
   color: #fff;
   font-size: 17px;
+}
+/* .formSign input:nth-child(5) {
+  background-color: pink;
+} */
+.pickUpImg {
+  display: none;
+}
+.label-file {
+  cursor: pointer;
+  color: #21a1b3;
+  font-family: "Georama", sans-serif;
+  margin-top: 10px;
+}
+.label-file:hover {
+  color: #5ed4f1;
 }
 /* dropdown test--------------------------------------------- */
 

@@ -2,6 +2,9 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 
+//import icones
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const Signup = ({ handleToken }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -116,9 +119,17 @@ const Signup = ({ handleToken }) => {
           onChange={(event) => setPasswordConf(event.target.value)}
         />
         {/* ------------------------------------------------------------------------- */}
+        <label htmlFor="file" className="label-file">
+          <span>
+            {" "}
+            <FontAwesomeIcon icon="user-plus" />
+          </span>
+          <span> Choose a picture</span>
+        </label>
         <input
+          id="file"
+          className="pickUpImg"
           type="file"
-          placeholder="Confirm Password"
           onChange={(event) => {
             console.log(event.target.files[0]);
             setPicture(event.target.files[0]);
