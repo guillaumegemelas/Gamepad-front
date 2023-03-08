@@ -91,9 +91,6 @@ const Game = ({ token }) => {
 
           // requete vers le back fonctionne!!!! plus besoin de clé Api et requete vers serveur local et plus tard northflank
           `http://localhost:3000/games?&search=${search}`
-
-          //requete par genre de jeu (ex: action): obsolète
-          // `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&genres=${gameSameType}`
         );
         setGameSameType2(response.data.results);
         // console.log(response.data.results, "************data.results******");
@@ -354,13 +351,18 @@ const Game = ({ token }) => {
                             <div className="toColumnUser">
                               {userReview.map((event, index) => {
                                 return (
-                                  <div key={index} className="reviewBox1">
+                                  <div key={index}>
                                     {item.token === event.token && (
-                                      <div>
-                                        <p>
-                                          {event.username}{" "}
-                                          <FontAwesomeIcon icon="comment-dots" />
-                                        </p>
+                                      <div className="reviewBox1">
+                                        <div>
+                                          <p>{event.username} </p>
+                                        </div>
+                                        <div>
+                                          <img
+                                            src={event.picture.secure_url}
+                                            alt="pictureAvatar"
+                                          />
+                                        </div>
                                       </div>
                                     )}
                                   </div>

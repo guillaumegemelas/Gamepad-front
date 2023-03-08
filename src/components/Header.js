@@ -5,7 +5,7 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 //import icones
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 //-----------------------
 
 const Header = ({ handleToken, token }) => {
@@ -59,10 +59,16 @@ const Header = ({ handleToken, token }) => {
                       <div key={index}>
                         {token === item.token && (
                           <div className="connectUser">
-                            <span>
+                            <div className="headerAvatar">
+                              <img src={item.picture.secure_url} alt="" />
+                            </div>
+
+                            {/* <span>
                               <FontAwesomeIcon icon="face-grin-wide" />
-                            </span>
-                            <p>{item.username}</p>
+                            </span> */}
+                            <div>
+                              <p>{item.username}</p>
+                            </div>
                           </div>
                         )}
                       </div>
