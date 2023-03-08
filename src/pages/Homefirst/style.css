@@ -1,0 +1,46 @@
+/* Home --------------------------------------------------------*/
+
+.HomeFirst {
+  display: flex;
+  /* flex-direction: column; */
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../Homefirst/kratos.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.HomeFirst img {
+  height: 100%;
+  width: 100%;
+  padding-top: 80px;
+  object-fit: contain;
+}
+/* .HomeFirst p {
+    margin-top: 180px;
+    margin-left: 120px;
+    font-size: 25px;
+    color: #1f2024;
+  } */
+.HomeFirst .icon {
+  margin-top: 180px;
+  margin-left: 120px;
+  font-size: 60px;
+  color: #1f2024;
+}
+a {
+  text-decoration: none;
+}
+.buttonHome p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 250px;
+  border: 1px solid #9d5b64;
+  border-radius: 5px;
+  background-color: none;
+  box-shadow: 1px 1px 15px rgb(69, 68, 68);
+}
+.buttonHome .icon:hover {
+  color: rgb(147, 59, 69);
+}

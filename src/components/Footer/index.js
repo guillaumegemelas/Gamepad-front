@@ -1,3 +1,6 @@
+//import style.css
+import "./style.css";
+
 const Footer = () => {
   const openInNewTab = (url) => {
     window.open(url, "_blank", "noreferrer");

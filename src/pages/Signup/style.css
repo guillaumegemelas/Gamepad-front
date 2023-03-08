@@ -1,0 +1,87 @@
+/* page signup ----------------------------------------------------------------------*/
+
+.signupForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 170px;
+  height: 100vh;
+  width: 100vw;
+  background-color: #1f2024;
+}
+.formSign {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 470px;
+  margin-top: 30px;
+}
+.formSign1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 330px;
+  margin-top: 30px;
+}
+.formSign button,
+.formSign1 button {
+  height: 50px;
+  width: 370px;
+  font-size: 20px;
+  padding-left: 15px;
+  border: none;
+  color: black;
+  font-family: "Georama", sans-serif;
+  border-bottom: 1px solid #21a1b3;
+  background-color: #21a1b3;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.formSign input,
+.formSign1 input {
+  width: 350px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  font-family: "Georama", sans-serif;
+  color: #fff;
+  font-size: 17px;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  background-color: #3f414a;
+  border-bottom: 1px solid #21a1b3;
+}
+.formSign button:hover {
+  color: #3f414a;
+}
+.formSign1 button:hover {
+  color: #3f414a;
+}
+
+.formSign input::placeholder {
+  color: rgb(184, 180, 180);
+  font-size: 17px;
+  font-family: "Georama", sans-serif;
+}
+.formSign p {
+  color: #fff;
+  font-size: 17px;
+}
+/* .formSign input:nth-child(5) {
+    background-color: pink;
+  } */
+.pickUpImg {
+  display: none;
+}
+.label-file {
+  cursor: pointer;
+  color: #21a1b3;
+  font-family: "Georama", sans-serif;
+  margin-top: 10px;
+}
+.label-file:hover {
+  color: #5ed4f1;
+}

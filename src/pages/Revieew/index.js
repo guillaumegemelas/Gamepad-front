@@ -1,4 +1,8 @@
 import axios from "axios";
+
+//import style.css
+import "./style.css";
+
 import {
   useState,
   // useEffect

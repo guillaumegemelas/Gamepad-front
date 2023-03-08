@@ -2,6 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+//import style.css
+import "./style.css";
+
 //import icones
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

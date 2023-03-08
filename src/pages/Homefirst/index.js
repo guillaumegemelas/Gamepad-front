@@ -1,4 +1,8 @@
 import { Link } from "react-router-dom";
+
+//import style.css
+import "./style.css";
+
 //import Fade pour animation entré icone par la gauche
 // import { Fade } from "react-reveal"; renvoie une erreur de compatibilité!! à voir pkoi
 

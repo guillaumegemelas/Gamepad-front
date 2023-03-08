@@ -6,13 +6,13 @@ import Cookies from "js-cookie";
 import { useState } from "react";
 
 //import des pages
-import Home from "./pages/Home";
+import Home from "./pages/Homefirst";
 import Homepage from "./pages/Homepage";
 import Game from "./pages/Game";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Favourites from "./pages/Favourites";
-import Review from "./pages/Review";
+import Review from "./pages/Revieew";
 
 //import des composants
 import Header from "./components/Header";

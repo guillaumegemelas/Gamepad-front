@@ -1,3 +1,6 @@
+//import style.css
+import "./style.css";
+
 const Dropdown = ({ label, options, onChange }) => {
   return (
     <label className="dropLabel">

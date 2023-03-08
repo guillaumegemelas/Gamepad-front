@@ -1,5 +1,8 @@
-import logo1 from "../img/logo1.png";
+import logo1 from "../Header/logo1.png";
 import { useNavigate, Link } from "react-router-dom";
+
+//import style.css
+import "./style.css";
 
 //imports pour ajout name du user
 import axios from "axios";

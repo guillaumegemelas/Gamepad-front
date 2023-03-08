@@ -1,13 +1,17 @@
 import axios from "axios";
+
+//import style.css
+import "./style.css";
+
 // import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import GameCard from "../components/GameCard";
+import GameCard from "../../components/GameCard";
 // import { Navigate } from "react-router-dom";
 
 //import du sélecteur
-import Dropdown from "../components/Dropdown";
+import Dropdown from "../../components/Dropdown";
 
-import logo1 from "../img/logo1.png";
+import logo1 from "../Homepage/logo1.png";
 
 //page principal sur la quelle apparaissent tous les jeux issu de l'API
 const Homepage = () => {
