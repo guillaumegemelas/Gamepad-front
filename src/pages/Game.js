@@ -49,9 +49,9 @@ const Game = ({ token }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          // `https://api.rawg.io/api/games/${id}?key=b144d325b8cd4cee8a7ad6c204cab7d2`
+          //si utilisation Northflank
+          // https://site--gamepad-back--zqfvjrr4byql.code.run/games/${id}`
 
-          // requete vers le back fonctionne!!!! plus besoin de clé Api et requete vers serveur local et plus tard northflank:
           `http://localhost:3000/games/${id}`
         );
         setGameCheck(response.data);
@@ -86,8 +86,8 @@ const Game = ({ token }) => {
     const fetchGame = async () => {
       try {
         const response = await axios.get(
-          //si requete se fait directement depuis l'API, le pbm est le visu de la clé qu'il faut mettre dans le .env du back
-          // `https://api.rawg.io/api/games?key=b144d325b8cd4cee8a7ad6c204cab7d2&search=${search}`
+          //si requete se fait versNorthflank
+          // `https://site--gamepad-back--zqfvjrr4byql.code.run/games?&search=${search}`
 
           // requete vers le back fonctionne!!!! plus besoin de clé Api et requete vers serveur local et plus tard northflank
           `http://localhost:3000/games?&search=${search}`
@@ -109,6 +109,9 @@ const Game = ({ token }) => {
     const fetchReviews = async () => {
       try {
         const response = await axios.get(
+          // si requete vers Northflank au lieu de localhost
+          // https://site--gamepad-back--zqfvjrr4byql.code.run/review
+
           // requete vers le back fonctionne!!!! plus besoin de clé Api et requete vers serveur local et plus tard northflank
           `http://localhost:3000/review`
         );
@@ -128,7 +131,11 @@ const Game = ({ token }) => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
+        // si requete vers Northflank au lieu de localhost
+        // const response = await axios.get("https://site--gamepad-back--zqfvjrr4byql.code.run/user");
+
         const response = await axios.get("http://localhost:3000/user");
+
         setUserReview(response.data.users);
         setIsLoading(false);
         console.log(
@@ -187,6 +194,9 @@ const Game = ({ token }) => {
                     onClick={async () => {
                       if (token) {
                         try {
+                          // const response = await axios.post(
+                          //   "https://site--gamepad-back--zqfvjrr4byql.code.run/addfavourites",
+
                           const response = await axios.post(
                             "http://localhost:3000/addfavourites",
 

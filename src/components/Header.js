@@ -18,6 +18,10 @@ const Header = ({ handleToken, token }) => {
     const fetchUser = async () => {
       try {
         const response = await axios.get("http://localhost:3000/user");
+
+        //requete Northflanck au lieu de localhost
+        // const response = await axios.get("https://site--gamepad-back--zqfvjrr4byql.code.run/user")
+
         setData(response.data.users);
         setIsLoading(false);
         console.log(

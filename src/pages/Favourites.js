@@ -15,6 +15,9 @@ const Favourites = ({ token }) => {
   useEffect(() => {
     const fetchFavourites = async () => {
       try {
+        //requete depoloiement Northflanck
+        // const response = await axios.get("https://site--gamepad-back--zqfvjrr4byql.code.run/favourites", {
+
         const response = await axios.get("http://localhost:3000/favourites", {
           //ajout bearer token pour authentification avecmiddleware
           headers: {
@@ -72,6 +75,8 @@ const Favourites = ({ token }) => {
                             try {
                               const response = await axios.delete(
                                 `http://localhost:3000/favourites/delete/${event._id}`,
+                                //déploiement Northflanck
+                                // https://site--gamepad-back--zqfvjrr4byql.code.run/favourites/delete/${event._id}
                                 {
                                   headers: {
                                     Authorization: `Bearer ${token}`,

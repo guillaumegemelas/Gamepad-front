@@ -24,6 +24,10 @@ const Review = ({ token }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
+      //si northflank
+      // const response = await axios.post(
+      //   "https://site--gamepad-back--zqfvjrr4byql.code.run/addreview",
+
       const response = await axios.post(
         "http://localhost:3000/addreview",
         {

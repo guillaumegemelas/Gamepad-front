@@ -33,6 +33,8 @@ const Signup = ({ handleToken }) => {
       //--------------------------------------------------------------------------
       const response = await axios.post(
         //requete qu'il faudra changer lorsque le site sera hebergé sur Northflank
+        // "https://site--gamepad-back--zqfvjrr4byql.code.run/user/signup"
+
         "http://localhost:3000/user/signup",
         formData
       );
