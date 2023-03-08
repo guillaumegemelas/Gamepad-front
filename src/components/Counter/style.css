@@ -1,10 +1,42 @@
-@media (max-width: 630px) {
+.reviewCounter {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 5px;
+  width: 100px;
+  margin-left: 70vw;
+}
+
+/*-----------------------------------------------------------------------*/
+@media (max-width: 1150px) {
   .reviewCounter {
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-bottom: 5px;
     width: 100px;
-    margin-left: 70%;
+    margin-left: 100px;
+  }
+}
+
+@media (max-width: 630px) {
+  .reviewBox {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    margin: 0 auto;
+    min-height: 130px;
+    /* border: 1px red solid; */
+    background-color: rgb(69, 68, 68);
+    border-radius: 5px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    border-bottom: #21a1b3 1px solid;
+  }
+  .reviewCounter {
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 5px;
+    width: 100px;
   }
 }
