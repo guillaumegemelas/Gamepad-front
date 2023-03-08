@@ -9,22 +9,38 @@ const Signup = ({ handleToken }) => {
   const [passwordConf, setPasswordConf] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
+  //test formdata pour cloudinary---------------------------------------------
+  const [picture, setPicture] = useState();
+  //--------------------------------------------------------------------------
   const navigate = useNavigate();
 
   const handleSignup = async () => {
     setErrorMessage("");
 
     try {
+      //test formdata pour cloudinary---------------------------------------------
+
+      const formData = new FormData();
+      formData.append("username", username);
+      formData.append("email", email);
+      formData.append("password", password);
+      formData.append("passwordConf", passwordConf);
+      formData.append("picture", picture);
+
+      //--------------------------------------------------------------------------
       const response = await axios.post(
         //requete qu'il faudra changer lorsque le site sera hebergé sur Northflank
         "http://localhost:3000/user/signup",
-        {
-          username: username,
-          email: email,
-          password: password,
-          passwordConf: passwordConf,
-        }
+        formData
       );
+
+      //   {
+      //     username: username,
+      //     email: email,
+      //     password: password,
+      //     passwordConf: passwordConf,
+      //   }
+      // );
 
       if (response.data.token) {
         handleToken(response.data.token);
@@ -48,6 +64,12 @@ const Signup = ({ handleToken }) => {
       }
       if (error.response.data.message === "Passwords are different") {
         setErrorMessage("Veuillez renseigner deux mots de passe identiques");
+      }
+      if (
+        error.response.data.message ===
+        "Cannot read properties of null (reading 'picture')"
+      ) {
+        setErrorMessage("Veuillez choisir une image de profil");
       }
     }
   };
@@ -93,6 +115,16 @@ const Signup = ({ handleToken }) => {
           placeholder="Confirm Password"
           onChange={(event) => setPasswordConf(event.target.value)}
         />
+        {/* ------------------------------------------------------------------------- */}
+        <input
+          type="file"
+          placeholder="Confirm Password"
+          onChange={(event) => {
+            console.log(event.target.files[0]);
+            setPicture(event.target.files[0]);
+          }}
+        />
+        {/* ------------------------------------------------------------------------- */}
         <button className="inscriptionButton" type="submit">
           Sign up
         </button>
