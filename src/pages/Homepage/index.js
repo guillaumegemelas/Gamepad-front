@@ -218,11 +218,11 @@ const Homepage = () => {
               <div className="filter2">
                 <button
                   onClick={() => {
-                    // setValue("");
-                    // setPlatforms("");
-                    // setGenres("");
+                    setValue("");
+                    setPlatforms("");
+                    setGenres("");
                     // pour refresh la page et mettre les states à default: méthode à défaut de mieux
-                    window.location.reload();
+                    // window.location.reload();
                   }}
                 >
                   <p>reset filters</p>
