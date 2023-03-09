@@ -83,75 +83,83 @@ const Signup = ({ handleToken }) => {
   };
 
   return (
-    <div className="signupForm">
-      <div>
-        <h1 style={{ color: "rgb(184, 180, 180)", fontSize: 27 }}>Sign up</h1>
-      </div>
+    <div className="container1">
+      {/* <div className="explain">
+        <h1>How does it work</h1>
+        <p>Log to your free account to be able to get all features</p>
+        <p>Add a game to your collection</p>
+        <p>Leave a review for a game</p>
+      </div> */}
+      <div className="signupForm">
+        <div>
+          <h1 style={{ color: "rgb(184, 180, 180)", fontSize: 27 }}>Sign up</h1>
+        </div>
 
-      <form
-        className="formSign"
-        onSubmit={(event) => {
-          event.preventDefault();
-          handleSignup();
-        }}
-      >
-        <input
-          id="username"
-          value={username}
-          type="text"
-          placeholder="Username"
-          onChange={(event) => setUsername(event.target.value)}
-        />
-        <input
-          id="email"
-          value={email}
-          type="text"
-          placeholder="Email"
-          onChange={(event) => setEmail(event.target.value)}
-        />
-        <input
-          id="password"
-          value={password}
-          type="password"
-          placeholder="Password"
-          onChange={(event) => setPassword(event.target.value)}
-        />
-        <input
-          id="passwordConf"
-          value={passwordConf}
-          type="password"
-          placeholder="Confirm Password"
-          onChange={(event) => setPasswordConf(event.target.value)}
-        />
-        {/* ------------------------------------------------------------------------- */}
-        <label htmlFor="file" className="label-file">
-          <span>
-            {" "}
-            <FontAwesomeIcon icon="user-plus" />
-          </span>
-          <span> Choose a picture</span>
-        </label>
-        <input
-          id="file"
-          className="pickUpImg"
-          type="file"
-          onChange={(event) => {
-            console.log(event.target.files[0]);
-            setPicture(event.target.files[0]);
+        <form
+          className="formSign"
+          onSubmit={(event) => {
+            event.preventDefault();
+            handleSignup();
           }}
-        />
-        {/* ------------------------------------------------------------------------- */}
-        <button className="inscriptionButton" type="submit">
-          Sign up
-        </button>
-        <Link to={"/user/login"}>
-          {" "}
-          <p style={{ color: "#21a1b3", fontSize: 18 }}>
-            Already have an account, please log in
-          </p>
-        </Link>
-        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-      </form>
+        >
+          <input
+            id="username"
+            value={username}
+            type="text"
+            placeholder="Username"
+            onChange={(event) => setUsername(event.target.value)}
+          />
+          <input
+            id="email"
+            value={email}
+            type="text"
+            placeholder="Email"
+            onChange={(event) => setEmail(event.target.value)}
+          />
+          <input
+            id="password"
+            value={password}
+            type="password"
+            placeholder="Password"
+            onChange={(event) => setPassword(event.target.value)}
+          />
+          <input
+            id="passwordConf"
+            value={passwordConf}
+            type="password"
+            placeholder="Confirm Password"
+            onChange={(event) => setPasswordConf(event.target.value)}
+          />
+          {/* ------------------------------------------------------------------------- */}
+          <label htmlFor="file" className="label-file">
+            <span>
+              {" "}
+              <FontAwesomeIcon icon="user-plus" />
+            </span>
+            <span> Choose a picture</span>
+          </label>
+          <input
+            id="file"
+            className="pickUpImg"
+            type="file"
+            onChange={(event) => {
+              console.log(event.target.files[0]);
+              setPicture(event.target.files[0]);
+            }}
+          />
+          {/* ------------------------------------------------------------------------- */}
+          <button className="inscriptionButton" type="submit">
+            Sign up
+          </button>
+          <Link to={"/user/login"}>
+            {" "}
+            <p style={{ color: "#21a1b3", fontSize: 18 }}>
+              Already have an account, please log in
+            </p>
+          </Link>
+          {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+        </form>
+      </div>
     </div>
   );
 };

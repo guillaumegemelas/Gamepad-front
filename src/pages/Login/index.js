@@ -17,8 +17,10 @@ const Login = ({ handleToken }) => {
   }
 
   let id;
-  id = state.id;
-  console.log(id);
+  if (state) {
+    id = state.id;
+    console.log(id, "log de id-----------------");
+  }
 
   const handleLogin = async () => {
     try {
