@@ -161,9 +161,7 @@ const Signup = ({ handleToken }) => {
           </button>
           <Link to={"/user/login"}>
             {" "}
-            <p style={{ color: "#21a1b3", fontSize: 18 }}>
-              Already have an account, please log in
-            </p>
+            <p>Already have an account, please log in</p>
           </Link>
           {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
         </form>

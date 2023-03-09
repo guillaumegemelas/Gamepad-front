@@ -124,6 +124,17 @@
 .label-file:hover {
   color: #5ed4f1;
 }
+.signupForm p,
+.signupForm1 p {
+  color: #21a1b3;
+  font-size: 18px;
+}
+.signupForm p:hover {
+  color: #5ed4f1;
+}
+.formSign1 p:hover {
+  color: #5ed4f1;
+}
 
 @media (max-width: 1150px) {
   .container1 {
