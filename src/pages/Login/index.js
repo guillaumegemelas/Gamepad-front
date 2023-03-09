@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 
 const Login = ({ handleToken }) => {
   const [email, setEmail] = useState("");
@@ -8,6 +8,13 @@ const Login = ({ handleToken }) => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
+  //tests de redirection vers page publish après connection au lieu de la page home
+  const { state } = useLocation();
+
+  let logged;
+  if (state) {
+    logged = state.logged;
+  }
 
   const handleLogin = async () => {
     try {
@@ -23,7 +30,9 @@ const Login = ({ handleToken }) => {
       if (response.data.token) {
         handleToken(response.data.token);
         alert("Vous êtes maintenant connecté");
-        navigate("/games");
+        //---------------------------
+        logged ? navigate("/game/:id") : navigate("/games");
+        //----------------------------
       }
     } catch (error) {
       if (error.response.data.message === "Unknown email") {

@@ -229,7 +229,10 @@ const Game = ({ token }) => {
                           }
                         }
                       } else {
-                        navigate("/user/login");
+                        //ajout state pour revenir sur la page en cours après login ok
+                        navigate("/user/login", {
+                          state: { logged: true },
+                        });
                       }
                     }}
                   >
