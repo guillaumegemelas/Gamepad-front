@@ -89,34 +89,34 @@ const Homepage = () => {
         if (platforms && genres) {
           response = await axios.get(
             // requete vers Northflank
-            // `https://site--gamepad-back--zqfvjrr4byql.code.run/games?&search=${search}&page=${page}&value=${value}&platforms=${platforms}&genres=${genres}`
+            `https://site--gamepad-back--zqfvjrr4byql.code.run/games?&search=${search}&page=${page}&value=${value}&platforms=${platforms}&genres=${genres}`
 
             // requete vers le back fonctionne sauf filtres plus besoin de clé Api et requete vers serveur local et plus tard northflank:
-            `http://localhost:3000/games?&search=${search}&page=${page}&value=${value}&platforms=${platforms}&genres=${genres}`
+            //`http://localhost:3000/games?&search=${search}&page=${page}&value=${value}&platforms=${platforms}&genres=${genres}`
           );
         } else if (platforms && !genres) {
           response = await axios.get(
             // requete vers Northflank
-            // `https://site--gamepad-back--zqfvjrr4byql.code.run/games?&search=${search}&page=${page}&value=${value}&platforms=${platforms}`
+            `https://site--gamepad-back--zqfvjrr4byql.code.run/games?&search=${search}&page=${page}&value=${value}&platforms=${platforms}`
 
             // requete vers le back fonctionne sauf filtres plus besoin de clé Api et requete vers serveur local et plus tard northflank:
-            `http://localhost:3000/games?&search=${search}&page=${page}&value=${value}&platforms=${platforms}`
+            //`http://localhost:3000/games?&search=${search}&page=${page}&value=${value}&platforms=${platforms}`
           );
         } else if (!platforms && genres) {
           response = await axios.get(
             // requete vers Northflank
-            // `https://site--gamepad-back--zqfvjrr4byql.code.run/games?&search=${search}&page=${page}&value=${value}&genres=${genres}`
+            `https://site--gamepad-back--zqfvjrr4byql.code.run/games?&search=${search}&page=${page}&value=${value}&genres=${genres}`
 
             // requete vers le back fonctionne sauf filtres plus besoin de clé Api et requete vers serveur local et plus tard northflank:
-            `http://localhost:3000/games?&search=${search}&page=${page}&value=${value}&genres=${genres}`
+            //`http://localhost:3000/games?&search=${search}&page=${page}&value=${value}&genres=${genres}`
           );
         } else {
           response = await axios.get(
             // requete vers Northflank
-            // `https://site--gamepad-back--zqfvjrr4byql.code.run/games?search=${search}&page=${page}&value=${value}`
+            `https://site--gamepad-back--zqfvjrr4byql.code.run/games?search=${search}&page=${page}&value=${value}`
 
             // requete vers le back fonctionne sauf filtres plus besoin de clé Api et requete vers serveur local et plus tard northflank:
-            `http://localhost:3000/games?&search=${search}&page=${page}&value=${value}`
+            //`http://localhost:3000/games?&search=${search}&page=${page}&value=${value}`
           );
         }
 

@@ -54,9 +54,9 @@ const Game = ({ token }) => {
       try {
         const response = await axios.get(
           //si utilisation Northflank
-          // https://site--gamepad-back--zqfvjrr4byql.code.run/games/${id}`
+          `https://site--gamepad-back--zqfvjrr4byql.code.run/games/${id}`
 
-          `http://localhost:3000/games/${id}`
+          // `http://localhost:3000/games/${id}`
         );
         setGameCheck(response.data);
         console.log(response.data, "reponse data game");
@@ -91,10 +91,10 @@ const Game = ({ token }) => {
       try {
         const response = await axios.get(
           //si requete se fait versNorthflank
-          // `https://site--gamepad-back--zqfvjrr4byql.code.run/games?&search=${search}`
+          `https://site--gamepad-back--zqfvjrr4byql.code.run/games?&search=${search}`
 
           // requete vers le back fonctionne!!!! plus besoin de clé Api et requete vers serveur local et plus tard northflank
-          `http://localhost:3000/games?&search=${search}`
+          //`http://localhost:3000/games?&search=${search}`
         );
         setGameSameType2(response.data.results);
         // console.log(response.data.results, "************data.results******");
@@ -113,9 +113,11 @@ const Game = ({ token }) => {
     const fetchUser = async () => {
       try {
         // si requete vers Northflank au lieu de localhost
-        // const response = await axios.get("https://site--gamepad-back--zqfvjrr4byql.code.run/user");
+        const response = await axios.get(
+          "https://site--gamepad-back--zqfvjrr4byql.code.run/user"
+        );
 
-        const response = await axios.get("http://localhost:3000/user");
+        // const response = await axios.get("http://localhost:3000/user");
 
         setUserReview(response.data.users);
         setIsLoading(false);
@@ -132,10 +134,10 @@ const Game = ({ token }) => {
       try {
         const response = await axios.get(
           // si requete vers Northflank au lieu de localhost
-          // https://site--gamepad-back--zqfvjrr4byql.code.run/review
+          `https://site--gamepad-back--zqfvjrr4byql.code.run/review`
 
           // requete vers le back fonctionne!!!! plus besoin de clé Api et requete vers serveur local et plus tard northflank
-          `http://localhost:3000/review`
+          // `http://localhost:3000/review`
         );
         setReviews(response.data.reviews);
         console.log(response.data.reviews, "************data reviews******");
@@ -194,11 +196,11 @@ const Game = ({ token }) => {
                     onClick={async () => {
                       if (token) {
                         try {
-                          // const response = await axios.post(
-                          //   "https://site--gamepad-back--zqfvjrr4byql.code.run/addfavourites",
-
                           const response = await axios.post(
-                            "http://localhost:3000/addfavourites",
+                            "https://site--gamepad-back--zqfvjrr4byql.code.run/addfavourites",
+
+                            // const response = await axios.post(
+                            //   "http://localhost:3000/addfavourites",
 
                             {
                               name: gameCheck.name,

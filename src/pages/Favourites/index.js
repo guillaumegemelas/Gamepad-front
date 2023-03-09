@@ -19,14 +19,16 @@ const Favourites = ({ token }) => {
     const fetchFavourites = async () => {
       try {
         //requete depoloiement Northflanck
-        // const response = await axios.get("https://site--gamepad-back--zqfvjrr4byql.code.run/favourites", {
-
-        const response = await axios.get("http://localhost:3000/favourites", {
-          //ajout bearer token pour authentification avecmiddleware
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await axios.get(
+          "https://site--gamepad-back--zqfvjrr4byql.code.run/favourites",
+          {
+            // const response = await axios.get("http://localhost:3000/favourites", {
+            //ajout bearer token pour authentification avecmiddleware
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
         setData(response.data.favourites);
         setIsLoading(false);
         console.log(response.data);

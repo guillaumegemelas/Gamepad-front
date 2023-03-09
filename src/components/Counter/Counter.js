@@ -26,9 +26,9 @@ const Counter = ({ count, id, setReviews, token }) => {
               try {
                 const response = await axios.put(
                   //requete Northflanck au lieu de localhost
-                  // https://site--gamepad-back--zqfvjrr4byql.code.run/review/update1/${id}
+                  `https://site--gamepad-back--zqfvjrr4byql.code.run/review/update1/${id}`
 
-                  `http://localhost:3000/review/update1/${id}`
+                  // `http://localhost:3000/review/update1/${id}`
                   //   {
                   //     headers: {
                   //       Authorization: `Bearer ${token}`,
@@ -55,9 +55,9 @@ const Counter = ({ count, id, setReviews, token }) => {
               try {
                 const response = await axios.put(
                   //requete Northflanck au lieu de localhost
-                  // https://site--gamepad-back--zqfvjrr4byql.code.run/review/update2/${id}
+                  `https://site--gamepad-back--zqfvjrr4byql.code.run/review/update2/${id}`
 
-                  `http://localhost:3000/review/update2/${id}`
+                  // `http://localhost:3000/review/update2/${id}`
                   //   {
                   //     headers: {
                   //       Authorization: `Bearer ${token}`,

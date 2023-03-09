@@ -28,12 +28,14 @@ const Login = ({ handleToken }) => {
   const handleLogin = async () => {
     try {
       //si northflank
-      // const response = await axios.post("https://site--gamepad-back--zqfvjrr4byql.code.run/user/login", {
-
-      const response = await axios.post("http://localhost:3000/user/login", {
-        email: email,
-        password: password,
-      });
+      const response = await axios.post(
+        "https://site--gamepad-back--zqfvjrr4byql.code.run/user/login",
+        {
+          // const response = await axios.post("http://localhost:3000/user/login", {
+          email: email,
+          password: password,
+        }
+      );
       console.log(response.data);
 
       if (response.data.token) {

@@ -29,11 +29,11 @@ const Review = ({ token }) => {
     event.preventDefault();
     try {
       //si northflank
-      // const response = await axios.post(
-      //   "https://site--gamepad-back--zqfvjrr4byql.code.run/addreview",
-
       const response = await axios.post(
-        "http://localhost:3000/addreview",
+        "https://site--gamepad-back--zqfvjrr4byql.code.run/addreview",
+
+        // const response = await axios.post(
+        //   "http://localhost:3000/addreview",
         {
           name: name,
           title: title,
