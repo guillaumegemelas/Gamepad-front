@@ -79,9 +79,9 @@ const Favourites = ({ token }) => {
                           onClick={async () => {
                             try {
                               const response = await axios.delete(
-                                `http://localhost:3000/favourites/delete/${event._id}`,
+                                // `http://localhost:3000/favourites/delete/${event._id}`,
                                 //déploiement Northflanck
-                                // https://site--gamepad-back--zqfvjrr4byql.code.run/favourites/delete/${event._id}
+                                `https://site--gamepad-back--zqfvjrr4byql.code.run/favourites/delete/${event._id}`,
                                 {
                                   headers: {
                                     Authorization: `Bearer ${token}`,
