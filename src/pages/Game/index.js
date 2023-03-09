@@ -25,6 +25,7 @@ const Game = ({ token }) => {
   const [gameCheck, setGameCheck] = useState({});
   //   bien mettre ("") pour éviter undefined à chargement page
   const [isLoading, setIsLoading] = useState();
+
   //state platforms
   const [platforms, setPlatforms] = useState([]);
   //state publisher
