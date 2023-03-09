@@ -132,3 +132,13 @@
     background-color: #1f2024;
   }
 }
+
+@media (max-width: 630px) {
+  .favTitle h1 {
+    color: white;
+    padding-top: 100px;
+    margin-bottom: 50px;
+    font-size: 25px;
+    text-decoration: #21a1b3 underline 1px;
+  }
+}

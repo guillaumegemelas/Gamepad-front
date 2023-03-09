@@ -309,6 +309,13 @@
     margin-bottom: 35px;
     margin-left: 20px;
   }
+  .test5 {
+    width: 95vw;
+    /* background-color: pink; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 /*==========630px======================*/
 
@@ -360,5 +367,12 @@
     padding-top: 90px;
     margin-bottom: 35px;
     margin-left: 20px;
+  }
+  .test5 {
+    width: 100vw;
+    /* background-color: pink; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
