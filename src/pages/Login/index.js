@@ -16,6 +16,10 @@ const Login = ({ handleToken }) => {
     logged = state.logged;
   }
 
+  let id;
+  id = state.id;
+  console.log(id);
+
   const handleLogin = async () => {
     try {
       //si northflank
@@ -31,7 +35,7 @@ const Login = ({ handleToken }) => {
         handleToken(response.data.token);
         alert("Vous êtes maintenant connecté");
         //---------------------------
-        logged ? navigate("/game/:id") : navigate("/games");
+        logged ? navigate(`/game/${id}`) : navigate("/games");
         //----------------------------
       }
     } catch (error) {

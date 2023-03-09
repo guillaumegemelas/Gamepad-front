@@ -107,30 +107,7 @@ const Game = ({ token }) => {
     fetchGame();
   }, [search]);
 
-  //test troisième requete pour récupérer les reviews du jeu----------------------------
-  useEffect(() => {
-    const fetchReviews = async () => {
-      try {
-        const response = await axios.get(
-          // si requete vers Northflank au lieu de localhost
-          // https://site--gamepad-back--zqfvjrr4byql.code.run/review
-
-          // requete vers le back fonctionne!!!! plus besoin de clé Api et requete vers serveur local et plus tard northflank
-          `http://localhost:3000/review`
-        );
-        setReviews(response.data.reviews);
-        console.log(response.data.reviews, "************data reviews******");
-
-        setIsLoading(false);
-      } catch (error) {
-        console.log(error.message);
-        console.log(error.response);
-      }
-    };
-    fetchReviews();
-  }, []);
-
-  //Quatrième requete pour récup user avec review--******************************-******************************
+  //troisième requete pour récup les reviews du jeu et user avec review--************-******************************
   useEffect(() => {
     const fetchUser = async () => {
       try {
@@ -150,6 +127,25 @@ const Game = ({ token }) => {
         console.log(error.response);
       }
     };
+    const fetchReviews = async () => {
+      try {
+        const response = await axios.get(
+          // si requete vers Northflank au lieu de localhost
+          // https://site--gamepad-back--zqfvjrr4byql.code.run/review
+
+          // requete vers le back fonctionne!!!! plus besoin de clé Api et requete vers serveur local et plus tard northflank
+          `http://localhost:3000/review`
+        );
+        setReviews(response.data.reviews);
+        console.log(response.data.reviews, "************data reviews******");
+
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error.message);
+        console.log(error.response);
+      }
+    };
+    fetchReviews();
     fetchUser();
   }, []);
 
@@ -229,9 +225,9 @@ const Game = ({ token }) => {
                           }
                         }
                       } else {
-                        //ajout state pour revenir sur la page en cours après login ok
+                        //ajout state pour revenir sur la page en cours après login ok: on peut cumuler les infos dans state (ici id et logged)
                         navigate("/user/login", {
-                          state: { logged: true },
+                          state: { logged: true, id: id },
                         });
                       }
                     }}
