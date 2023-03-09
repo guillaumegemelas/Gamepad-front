@@ -44,3 +44,52 @@
   flex-direction: row;
   width: 500px;
 }
+
+/* ==============1150px==============================================================*/
+@media (max-width: 1150px) {
+  .dropdown {
+    margin-left: 10px;
+    font-size: 12px;
+  }
+  .dropSelect {
+    width: 80px;
+    color: #fff;
+    height: 30px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    font-family: "Georama", sans-serif;
+    font-size: 12px;
+    background-color: #3f414a;
+    border-bottom: 1px solid #21a1b3;
+  }
+  .dropOption {
+    color: #fff;
+    background-color: #3f414a;
+  }
+  .filter2 button {
+    color: rgb(184, 180, 180);
+    width: 80px;
+    border-radius: 5px;
+    font-family: "Georama", sans-serif;
+    font-size: 12px;
+    background-color: #3f414a;
+    border: 1px solid #21a1b3;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .filter2 button:hover {
+    color: #21a1b3;
+  }
+
+  .test span {
+    text-decoration: #21a1b3 underline 1px;
+
+    font-style: italic;
+  }
+  .filters1 {
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+  }
+}
