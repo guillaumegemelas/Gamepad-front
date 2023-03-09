@@ -1,6 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link, useLocation } from "react-router-dom";
+//import icones
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Login = ({ handleToken }) => {
   const [email, setEmail] = useState("");
@@ -17,7 +19,8 @@ const Login = ({ handleToken }) => {
   }
 
   let id;
-  if (state) {
+  //on fait du optional chaining car state peut ne pas exister (équivalent à if(state))
+  if (state?.id) {
     id = state.id;
     console.log(id, "log de id-----------------");
   }
@@ -51,44 +54,61 @@ const Login = ({ handleToken }) => {
   };
 
   return (
-    <div className="signupForm">
-      <div className="h1form">
-        <h1 style={{ color: "rgb(184, 180, 180)", fontSize: 27 }}>Log in</h1>
+    <div className="container1">
+      <div className="explain">
+        <h1>How does it work</h1>
+        <p>
+          {" "}
+          <FontAwesomeIcon icon="user" /> Log to your free account to be able to
+          get all features
+        </p>
+        <p>
+          <FontAwesomeIcon icon="inbox" /> Add a game to your collection
+        </p>
+        <p>
+          <FontAwesomeIcon icon="message" /> Leave a review for a game
+        </p>
       </div>
 
-      <form
-        className="formSign1"
-        onSubmit={(event) => {
-          event.preventDefault();
-          handleLogin();
-        }}
-      >
-        <input
-          id="email"
-          value={email}
-          type="text"
-          placeholder="Email"
-          onChange={(event) => setEmail(event.target.value)}
-        />
-        <input
-          id="password"
-          value={password}
-          type="password"
-          placeholder="Password"
-          onChange={(event) => setPassword(event.target.value)}
-        />
-        <button className="inscriptionButton" type="submit">
-          Login
-        </button>
-        <Link to={"/user/signup"}>
-          {" "}
-          <p style={{ color: "#21a1b3", fontSize: 18 }}>
-            No account, please sign up
-          </p>
-        </Link>
+      <div className="signupForm">
+        <div className="h1form">
+          <h1 style={{ color: "rgb(184, 180, 180)", fontSize: 27 }}>Log in</h1>
+        </div>
 
-        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-      </form>
+        <form
+          className="formSign1"
+          onSubmit={(event) => {
+            event.preventDefault();
+            handleLogin();
+          }}
+        >
+          <input
+            id="email"
+            value={email}
+            type="text"
+            placeholder="Email"
+            onChange={(event) => setEmail(event.target.value)}
+          />
+          <input
+            id="password"
+            value={password}
+            type="password"
+            placeholder="Password"
+            onChange={(event) => setPassword(event.target.value)}
+          />
+          <button className="inscriptionButton" type="submit">
+            Login
+          </button>
+          <Link to={"/user/signup"}>
+            {" "}
+            <p style={{ color: "#21a1b3", fontSize: 18 }}>
+              No account, please sign up
+            </p>
+          </Link>
+
+          {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+        </form>
+      </div>
     </div>
   );
 };

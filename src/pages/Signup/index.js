@@ -84,12 +84,20 @@ const Signup = ({ handleToken }) => {
 
   return (
     <div className="container1">
-      {/* <div className="explain">
+      <div className="explain">
         <h1>How does it work</h1>
-        <p>Log to your free account to be able to get all features</p>
-        <p>Add a game to your collection</p>
-        <p>Leave a review for a game</p>
-      </div> */}
+        <p>
+          {" "}
+          <FontAwesomeIcon icon="user" /> Log to your free account to be able to
+          get all features
+        </p>
+        <p>
+          <FontAwesomeIcon icon="inbox" /> Add a game to your collection
+        </p>
+        <p>
+          <FontAwesomeIcon icon="message" /> Leave a review for a game
+        </p>
+      </div>
       <div className="signupForm">
         <div>
           <h1 style={{ color: "rgb(184, 180, 180)", fontSize: 27 }}>Sign up</h1>
