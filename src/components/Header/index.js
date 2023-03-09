@@ -118,15 +118,6 @@ const Header = ({ handleToken, token }) => {
               </div>
             )}
           </div>
-
-          {/* --------------------------------------------------- */}
-
-          {/* <div className="powered">
-        <p>
-          Powered by{" "}
-          <span style={{ textDecoration: "underline" }}>Rawg API</span>
-        </p>
-      </div> */}
         </div>
       )}
     </div>
