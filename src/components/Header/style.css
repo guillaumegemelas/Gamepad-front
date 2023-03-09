@@ -104,6 +104,18 @@
   /* .header { */
   /* background-color: yellow; */
   /* } */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    background-color: #1f2024;
+    border-bottom: 2px solid #21a1b3;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 999;
+  }
   .logo img {
     width: 100px;
     height: 60px;
