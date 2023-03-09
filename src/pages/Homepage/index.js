@@ -222,7 +222,7 @@ const Homepage = () => {
                     setPlatforms("");
                     setGenres("");
                     // pour refresh la page et mettre les states à default: méthode à défaut de mieux
-                    // window.location.reload();
+                    window.location.reload();
                   }}
                 >
                   <p>reset filters</p>
