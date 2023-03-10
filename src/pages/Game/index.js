@@ -368,7 +368,7 @@ const Game = ({ token }) => {
           <section className="reviewSection">
             <h1>Reviews</h1>
             <div className="reviewSection1">
-              {reviews.map((item) => {
+              {reviews.map((item, index) => {
                 //fonction pour trier les reviews par note la plus haute
                 reviews.sort(function compare(a, b) {
                   if (a.count < b.count) return 1;
@@ -379,7 +379,7 @@ const Game = ({ token }) => {
                 return (
                   <div key={item._id}>
                     {item.name === gameCheck.name && (
-                      <div>
+                      <div key={index}>
                         <div className="reviewBox">
                           <div className="toColumn">
                             <div className="toColumnh1">
@@ -409,8 +409,7 @@ const Game = ({ token }) => {
                           </div>
 
                           <p>{item.description}</p>
-                          {/* <p>{item.count}</p> */}
-                          {/* <p>{item._id}</p> */}
+
                           <div>
                             <Counter
                               count={item.count}
