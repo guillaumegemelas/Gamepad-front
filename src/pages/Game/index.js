@@ -369,6 +369,13 @@ const Game = ({ token }) => {
             <h1>Reviews</h1>
             <div className="reviewSection1">
               {reviews.map((item) => {
+                //fonction pour trier les reviews par note la plus haute
+                reviews.sort(function compare(a, b) {
+                  if (a.count < b.count) return 1;
+                  if (a.count > b.count) return -1;
+                  return 0;
+                });
+
                 return (
                   <div key={item._id}>
                     {item.name === gameCheck.name && (
