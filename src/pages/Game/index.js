@@ -361,7 +361,6 @@ const Game = ({ token }) => {
                     );
                   })}
                 </div>
-                // fin response.data?-------------------------------------*/}
               )}
             </div>
           </section>
