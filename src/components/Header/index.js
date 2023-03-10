@@ -96,6 +96,7 @@ const Header = ({ handleToken, token }) => {
                   className="but0"
                   onClick={() => {
                     handleToken(null);
+                    alert("Vous êtes maintenant déconnecté");
                     navigate("/");
                   }}
                 >

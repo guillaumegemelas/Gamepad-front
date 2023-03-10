@@ -1,6 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link, useLocation } from "react-router-dom";
+
+//import pour remplacer alert message basique
+// import toast, { Toaster } from "react-hot-toast";
+//===========================================
+
 //import icones
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -25,6 +30,10 @@ const Login = ({ handleToken }) => {
     console.log(id, "log de id-----------------");
   }
 
+  //===========================================
+  // const notify = () => toast("Vous êtes maintenant connecté");
+  //===========================================
+
   const handleLogin = async () => {
     try {
       //si northflank
@@ -40,6 +49,7 @@ const Login = ({ handleToken }) => {
 
       if (response.data.token) {
         handleToken(response.data.token);
+
         alert("Vous êtes maintenant connecté");
         //---------------------------
         logged ? navigate(`/game/${id}`) : navigate("/games");
@@ -101,11 +111,22 @@ const Login = ({ handleToken }) => {
           <button className="inscriptionButton" type="submit">
             Login
           </button>
+          {/* <div>
+            <Toaster
+              position="top-center"
+              reverseOrder={false}
+              toastOptions={{
+                // Define default options
+                className: "",
+                duration: 5000,
+              }}
+            />
+          </div> */}
+
           <Link to={"/user/signup"}>
             {" "}
             <p>No account, please sign up</p>
           </Link>
-
           {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
         </form>
       </div>
