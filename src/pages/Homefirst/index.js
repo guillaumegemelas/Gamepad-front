@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Home = () => {
   return (
     <div className="HomeFirst">
-      <Fade left>
+      <Fade cascade damping={1}>
         {" "}
         {/* <img src={kratos} alt="kratosImg" /> */}
         <Link to={`/games`}>
