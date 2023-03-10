@@ -49,6 +49,12 @@ const Game = ({ token }) => {
   //test requete user pour review
   const [userReview, setUserReview] = useState([]);
 
+  //**test scroll haut de page*************************************************
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  //***************************************************
+
   useEffect(() => {
     const fetchData = async () => {
       try {
