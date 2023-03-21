@@ -9,17 +9,15 @@ const GameCard = ({ games }) => {
       {games.results.map((elem) => {
         return (
           <section key={elem.id}>
-            <div>
-              <Link className="gameCard" to={`/game/${elem.id}`}>
-                <div className="hoverCard">
-                  <div id="slider" className="carousel">
-                    <img src={elem.background_image} alt="picture1" />
-                  </div>
+            <Link className="gameCard" to={`/game/${elem.id}`}>
+              <div className="hoverCard">
+                <div id="slider" className="carousel">
+                  <img src={elem.background_image} alt="picture1" />
                 </div>
+              </div>
 
-                <h1>{elem.name}</h1>
-              </Link>
-            </div>
+              <h1>{elem.name}</h1>
+            </Link>
           </section>
         );
       })}

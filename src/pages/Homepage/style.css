@@ -202,6 +202,41 @@
 /*==========630px======================*/
 
 @media (max-width: 630px) {
+  .gamesResult {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    max-width: 80vw;
+    height: 1200px;
+    /* background-color: #1f2024; */
+    /* border: 2px solid black; */
+    padding-bottom: 50px;
+  }
+  .gameCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: #1f2024;
+    margin: 10px 10px 10px 10px;
+    border: none;
+    height: 240px;
+    width: 160px;
+    border-radius: 5px;
+    background-color: white;
+    /* box-shadow: 1px 1px 15px rgb(69, 68, 68); */
+  }
+  .carousel {
+    display: flex;
+    flex-direction: row;
+    height: 240px;
+    width: 160px;
+    overflow-x: auto;
+  }
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+
   .gameCard img {
     width: 100%;
     height: 100%;
@@ -209,18 +244,12 @@
     position: relative;
     border-radius: 5px;
   }
-  /* .Home {
-   
-  } */
-  .global {
-    width: 100vw;
-    /* background-color: yellow; */
-  }
   .gameCard h1 {
     position: absolute;
     color: white;
     height: 40px;
-    width: 170px;
+    font-size: 14px;
+    width: 150px;
     padding-left: 5px;
     border: 1px solir red;
     /* il faudrait ajouter de l'opacité derrière le texte en blanc */
