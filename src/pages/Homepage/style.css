@@ -254,4 +254,19 @@
     border: 1px solir red;
     /* il faudrait ajouter de l'opacité derrière le texte en blanc */
   }
+  .homePageLogo img {
+    width: 160px;
+    height: 90px;
+    object-fit: cover;
+    margin-top: 15px;
+  }
+  .global .homeh1 h1 {
+    color: white;
+    font-size: 22px;
+    margin-left: 57px;
+  }
+  .filter2 button {
+    height: 30px;
+    margin-top: 12px;
+  }
 }

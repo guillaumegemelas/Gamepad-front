@@ -350,11 +350,7 @@ const Game = ({ token }) => {
                       index > 1 &&
                       index < 7 && (
                         // test link pour renvoyer nouvelle requete avec jeu selectionné dans les 5 présents
-                        <Link
-                          key={elem.id}
-                          className="gameCard"
-                          to={`/game/${elem.id}`}
-                        >
+                        <Link key={elem.id} to={`/game/${elem.id}`}>
                           <div className="gameCard1">
                             <img src={elem.background_image} alt="picture2" />
 
