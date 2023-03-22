@@ -78,9 +78,9 @@
   justify-content: center;
   margin: 0 auto;
   flex-wrap: wrap;
-  max-width: 80vw;
+  max-width: 72vw;
   height: 1200px;
-  /* background-color: #1f2024; */
+  /* background-color: white; */
   /* border: 2px solid black; */
   padding-bottom: 50px;
 }
