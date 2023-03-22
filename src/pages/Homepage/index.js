@@ -142,7 +142,7 @@ const Homepage = () => {
         </div>
       ) : (
         <div className="global">
-          {/* searchbar: filtre par nom -----------------------------------------------------------*/}
+          {/* searchbar: filtre par nom --------------------------------------------------------*/}
           <section className="searchBar">
             <div className="homePageLogo">
               <img src={logo1} alt="logo GamePad" />
