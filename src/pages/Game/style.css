@@ -407,10 +407,10 @@
     flex-direction: column;
     justify-content: flex-end;
     background-color: #1f2024;
-    margin: 10px 10px 45px 10px;
+    margin-bottom: 50px;
     border: none;
     height: 280px;
-    width: 340px;
+    width: 72vw;
     border-radius: 5px;
     box-shadow: 1px 1px 15px rgb(69, 68, 68);
   }
