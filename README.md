@@ -42,11 +42,11 @@ You have reviews of the game left by connected people, but you cannot see the ra
 
 <img width="1000" alt="gamepage" src="https://user-images.githubusercontent.com/121306549/229079933-8f117b40-9a8c-4755-9465-769664e0a0b2.png">
 
-If you want to log or create an accounbt, please click on the top right of the page on login or connect button `Login` or `Sign up`
+If you want to log or create an account, please click on the top right of the page on login or connect button `Login` or `Sign up`
 
 <img width="1000" alt="login" src="https://user-images.githubusercontent.com/121306549/229080157-7b1c186d-928f-4fe4-b4d2-cbe9446e4fe7.png">
 
-Once you've done it, you can add a game to favorites or leave a review
+Once you've done it, you can add a game to favorites or leave a review. On the favorite page, you can also remove a favorite from the list by clicking on the "trash can" icon.
 
 <img width="1000" alt="collection" src="https://user-images.githubusercontent.com/121306549/229080688-77c41816-94ef-4664-b36d-b68da47684de.png">
 
