@@ -1,4 +1,4 @@
-# Gamepad web ![logo1](https://user-images.githubusercontent.com/121306549/229082867-4a5da3c1-c303-4382-b542-792492056694.png)
+# Gamepad web
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
