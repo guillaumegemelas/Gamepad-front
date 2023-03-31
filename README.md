@@ -1,4 +1,4 @@
-# Gamepad web
+# Gamepad web ![logo1](https://user-images.githubusercontent.com/121306549/229082867-4a5da3c1-c303-4382-b542-792492056694.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -12,9 +12,9 @@ In the project directory, you can run:
 
 ### `yarn start`
 
-### Deployment
+## Deployment
 
-This project (Front-End) is deployed with Netlify. You can find it: [https://gamepad-gems.netlify.app] (https://gamepad-gems.netlify.app)
+This project (Front-End) is deployed with Netlify. You can find it: https://gamepad-gems.netlify.app
 
 ## How does it works
 
@@ -42,7 +42,7 @@ You have reviews of the game left by connected people, but you cannot see the ra
 
 <img width="1000" alt="gamepage" src="https://user-images.githubusercontent.com/121306549/229079933-8f117b40-9a8c-4755-9465-769664e0a0b2.png">
 
-If you want to log or create an accounbt, please click on the top right of the page on login or connect button ### `Login` or ### `Sign up`
+If you want to log or create an accounbt, please click on the top right of the page on login or connect button `Login` or `Sign up`
 
 <img width="1000" alt="login" src="https://user-images.githubusercontent.com/121306549/229080157-7b1c186d-928f-4fe4-b4d2-cbe9446e4fe7.png">
 
@@ -60,4 +60,4 @@ Ratings are ranked from the highest-rated to the lowest-rated. It is in this sec
 
 <img width="1708" alt="notes" src="https://user-images.githubusercontent.com/121306549/229081123-11e1c401-ebf3-4fe5-8b12-bbfb43b0d086.png">
 
-If you want to log out, just click on ### `Disconnect`
+If you want to log out, just click on `Disconnect`
