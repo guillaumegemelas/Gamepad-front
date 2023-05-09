@@ -17,7 +17,7 @@ import { useNavigate, useParams } from "react-router-dom";
 //et le token de la personne qui a publier la review pour afficher la personne qui a mis la note
 
 //il va falloir faire un useEffect avec deux states pour le title et la description et un bouton submit avec
-//e.preventdefault() :pour enoyer les title et description avec l'id du jeu et le token du user:
+//e.preventdefault() : pour enoyer les title et description avec l'id du jeu et le token du user:
 
 const Review = ({ token }) => {
   const navigate = useNavigate();
