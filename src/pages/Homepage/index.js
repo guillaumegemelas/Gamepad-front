@@ -81,6 +81,10 @@ const Homepage = () => {
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
   useEffect(() => {
+    //implémentation d'un abortcontroller:pour annuler la requête en cours si le composant est démonté ou si une nouvelle requête est déclenchée avant que la précédente ne soit terminée.
+    const abortController = new AbortController();
+    const signal = abortController.signal;
+
     const fetchData = async () => {
       let response;
       try {
@@ -89,15 +93,20 @@ const Homepage = () => {
         if (platforms && genres) {
           response = await axios.get(
             // requete vers Northflank
-            `https://site--gamepad-back--zqfvjrr4byql.code.run/games?&search=${search}&page=${page}&value=${value}&platforms=${platforms}&genres=${genres}`
-
+            `https://site--gamepad-back--zqfvjrr4byql.code.run/games?&search=${search}&page=${page}&value=${value}&platforms=${platforms}&genres=${genres}`,
+            {
+              cancelToken: signal.token,
+            }
             // requete vers le back fonctionne sauf filtres plus besoin de clé Api et requete vers serveur local et plus tard northflank:
             //`http://localhost:3000/games?&search=${search}&page=${page}&value=${value}&platforms=${platforms}&genres=${genres}`
           );
         } else if (platforms && !genres) {
           response = await axios.get(
             // requete vers Northflank
-            `https://site--gamepad-back--zqfvjrr4byql.code.run/games?&search=${search}&page=${page}&value=${value}&platforms=${platforms}`
+            `https://site--gamepad-back--zqfvjrr4byql.code.run/games?&search=${search}&page=${page}&value=${value}&platforms=${platforms}`,
+            {
+              cancelToken: signal.token,
+            }
 
             // requete vers le back fonctionne sauf filtres plus besoin de clé Api et requete vers serveur local et plus tard northflank:
             //`http://localhost:3000/games?&search=${search}&page=${page}&value=${value}&platforms=${platforms}`
@@ -105,15 +114,20 @@ const Homepage = () => {
         } else if (!platforms && genres) {
           response = await axios.get(
             // requete vers Northflank
-            `https://site--gamepad-back--zqfvjrr4byql.code.run/games?&search=${search}&page=${page}&value=${value}&genres=${genres}`
+            `https://site--gamepad-back--zqfvjrr4byql.code.run/games?&search=${search}&page=${page}&value=${value}&genres=${genres}`,
+            {
+              cancelToken: signal.token,
+            }
 
             // requete vers le back fonctionne sauf filtres plus besoin de clé Api et requete vers serveur local et plus tard northflank:
             //`http://localhost:3000/games?&search=${search}&page=${page}&value=${value}&genres=${genres}`
           );
         } else {
           response = await axios.get(
-            // requete vers Northflank
-            `https://site--gamepad-back--zqfvjrr4byql.code.run/games?search=${search}&page=${page}&value=${value}`
+            `https://site--gamepad-back--zqfvjrr4byql.code.run/games?search=${search}&page=${page}&value=${value}`,
+            {
+              cancelToken: signal.token,
+            }
 
             // requete vers le back fonctionne sauf filtres plus besoin de clé Api et requete vers serveur local et plus tard northflank:
             //`http://localhost:3000/games?&search=${search}&page=${page}&value=${value}`
@@ -126,11 +140,19 @@ const Homepage = () => {
         //renvoie les résultats de la requete à l'API
         setIsLoading(false);
       } catch (error) {
+        if (axios.isCancel(error)) {
+          console.log("Request cancelled:", error.message);
+        } else {
+          console.error("error fetching data:", error);
+        }
         console.log(error.message);
         console.log(error.response);
       }
     };
     fetchData();
+    return () => {
+      abortController.abort();
+    };
   }, [search, page, value, platforms, genres]);
 
   // j'ai bien une réponse du serveur avec tous les jeux
