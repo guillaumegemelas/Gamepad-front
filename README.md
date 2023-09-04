@@ -8,7 +8,6 @@ to reinstall node_modules, please run:
 
 ### `yarn`
 
-
 In the project directory, you can run:
 
 ### `yarn start`
