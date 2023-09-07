@@ -15,7 +15,9 @@ import logo1 from "../Homepage/logo1.png";
 
 //page principal sur la quelle apparaissent tous les jeux issu de l'API
 const Homepage = () => {
-  const [games, setGames] = useState();
+  const [games, setGames] = useState({});
+  //équivalent à
+  // const [games, setGames] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
@@ -95,6 +97,7 @@ const Homepage = () => {
             // requete vers Northflank
             `https://site--gamepad-back--zqfvjrr4byql.code.run/games?&search=${search}&page=${page}&value=${value}&platforms=${platforms}&genres=${genres}`,
             {
+              //cancelToken pour méthode avec abortcontroller
               cancelToken: signal.token,
             }
             // requete vers le back fonctionne sauf filtres plus besoin de clé Api et requete vers serveur local et plus tard northflank:
