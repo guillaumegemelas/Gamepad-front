@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 
 const Header = ({ handleToken, token }) => {
   const navigate = useNavigate();
-  // ajout requete axios vers back pour récupérer les infos du user loggué------------------
+  // ajout requete axios vers back pour récupérer les infos du user loggué----------------------
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
