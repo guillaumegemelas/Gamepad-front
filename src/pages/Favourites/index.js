@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 //import style.css
 import "./style.css";
+import Loader from "../../components/Loader";
 
 //import icones
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -44,7 +45,7 @@ const Favourites = ({ token }) => {
     <div className="totFav">
       {isLoading ? (
         <div className="isLoading">
-          <h1>En cours de chargement</h1>
+          <Loader />
         </div>
       ) : (
         <div className="favGlobPage">

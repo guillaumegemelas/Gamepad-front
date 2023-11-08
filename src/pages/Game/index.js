@@ -6,6 +6,7 @@ import "./style.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link, useNavigate } from "react-router-dom";
+import Loader from "../../components/Loader";
 
 import Counter from "../../components/Counter/Counter";
 
@@ -164,7 +165,7 @@ const Game = ({ token }) => {
     <div className="gamePage">
       {isLoading ? (
         <div className="isLoading">
-          <h1>En cours de chargement</h1>
+          <Loader />
         </div>
       ) : (
         <div className="gameResult">

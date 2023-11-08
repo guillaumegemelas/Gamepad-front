@@ -6,6 +6,7 @@ import "./style.css";
 // import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import GameCard from "../../components/Gamecard/GameCard";
+import Loader from "../../components/Loader";
 // import { Navigate } from "react-router-dom";
 
 //import du sélecteur
@@ -163,7 +164,7 @@ const Homepage = () => {
     <div className="Home">
       {isLoading ? (
         <div className="isLoading">
-          <h1>En cours de chargement</h1>
+          <Loader />
         </div>
       ) : (
         <div className="global">
